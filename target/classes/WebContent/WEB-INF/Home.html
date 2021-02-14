@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<link rel="stylesheet" type="text/css" media="all"
+	href="../CSS/mystyle.css" th:href="@{/css/mystyle.css}" />
+</head>
+<body>
+	<div align="right">
+		<p th:text="${'Username: ' + session.user.username}"></p>
+		<a th:href="@{/Logout}">Logout</a>
+	</div>
+
+	<h1>Welcome to the Gamified Marketing Application Home Page</h1>
+
+
+
+		<table>
+			<span th:each="p : ${products}">
+				<td th:text="${p.getName()}"></td>
+				<td th:text="${p.getDate()}"></td>
+				<img th:src="*{'data:image/png;base64,'+ p.getImage()}" />
+				<span th:each="mq : ${p.getMarketingQuestionsList()}">
+					<td th:text="${mq.getQuestion()}"></td> <br>
+					<span th:each="qa : ${mq.getQuestionnaireAnswerMap()}">
+						<td th:text="${qa.key.getUser().getUsername()}"></td><br>
+						<td th:text="${qa.value}"></td><br>
+					</span>
+				</span>
+			</span>
+		</table>
+			>
+
+
+
+
+
+</body>
+</html>

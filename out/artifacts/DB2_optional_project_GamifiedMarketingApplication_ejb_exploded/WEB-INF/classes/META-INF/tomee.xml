@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomee>
+<!--<Resource id="myDatabase" type="DataSource">-->
+<!-- JdbcDriver com.mysql.cj.jdbc.Driver -->
+<!-- JdbcUrl jdbc:mysql://localhost:3306/dbtest-->
+<!-- UserName piero-->
+<!-- Password fraternali-->
+<!--</Resource>-->
+
+<Resource id="myDatabase" type="DataSource">
+    JdbcDriver com.mysql.cj.jdbc.Driver
+    JdbcUrl jdbc:mysql://localhost:3306/dbtest
+    UserName root
+    Password mysql2020poli
+</Resource>
+
+<!--<Resource id="myDatabaseUnmanaged" type="DataSource">-->
+<!-- JdbcDriver com.mysql.cj.jdbc.Driver-->
+<!-- JdbcUrl jdbc:mysql://localhost:3306/dbtest-->
+<!-- UserName piero-->
+<!-- Password fraternali-->
+<!-- JtaManaged false-->
+<!--</Resource>-->
+
+<Resource id="myDatabaseUnmanaged" type="DataSource">
+    JdbcDriver com.mysql.cj.jdbc.Driver
+    JdbcUrl jdbc:mysql://localhost:3306/dbtest
+    UserName root
+    Password mysql2020poli
+    JtaManaged false
+</Resource>
+
+<!--<Resource id="MissionDB" type="DataSource">-->
+<!-- JdbcDriver com.mysql.cj.jdbc.Driver -->
+<!-- JdbcUrl jdbc:mysql://localhost:3306-->
+<!-- UserName piero-->
+<!-- Password fraternali-->
+<!--</Resource>-->
+
+<Resource id="MissionDB" type="DataSource">
+  JdbcDriver com.mysql.cj.jdbc.Driver
+  JdbcUrl jdbc:mysql://localhost:3306/db_expense_management
+  UserName root
+  Password mysql2020poli
+</Resource>
+
+<!--<Resource id="MissionDBUnmanaged" type="DataSource">-->
+<!-- JdbcDriver com.mysql.cj.jdbc.Driver-->
+<!-- JdbcUrl jdbc:mysql://localhost:3306-->
+<!-- UserName piero-->
+<!-- Password fraternali-->
+<!-- JtaManaged false-->
+<!--</Resource>-->
+
+<Resource id="MissionDBUnmanaged" type="DataSource">
+    JdbcDriver com.mysql.cj.jdbc.Driver
+    JdbcUrl jdbc:mysql://localhost:3306
+    UserName root
+    Password mysql2020poli
+    JtaManaged false
+</Resource>
+
+</tomee>

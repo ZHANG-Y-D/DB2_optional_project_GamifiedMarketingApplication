@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/36691330-7399-458e-ac8f-309ebbd0bffc/console.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/75c87c5a-0923-4c2d-b511-71d88782fcea/console.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/75c87c5a-0923-4c2d-b511-71d88782fcea/console_1.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/75c87c5a-0923-4c2d-b511-71d88782fcea/console_2.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/75c87c5a-0923-4c2d-b511-71d88782fcea/console_3.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../Z...Già superato/Tecnologie_Informatiche_per_il_web[Fraternali Piero]/5-Progetto-Project/Document-Management-System/riaVersion/WebContent/WEB-INF/web.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../5-Code/JPA/4thVersion-MissionManagementProjectCodeDBAndSpecs/ExpensesWithProjects17propagationtest/MissionExpensesEJB/ejbModule/it/polimi/db2/mission/entities/Mission.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../5-Code/JPA/4thVersion-MissionManagementProjectCodeDBAndSpecs/ExpensesWithProjects17propagationtest/MissionExpensesEJB/ejbModule/it/polimi/db2/mission/entities/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../5-Code/JPA/4thVersion-MissionManagementProjectCodeDBAndSpecs/ExpensesWithProjects17propagationtest/MissionExpensesEJB/ejbModule/it/polimi/db2/mission/services/MissionService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../5-Code/JPA/4thVersion-MissionManagementProjectCodeDBAndSpecs/ExpensesWithProjects17propagationtest/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../5-Code/JPA/BillOfMaterials-implementation-code/Bom7published/BomWeb/src/it/polimi/db2/bom/controllers/CreateLink.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../5-Code/JPA/Music+wishlist+code/music5/Db2_musicwishlist/ejbModule/it/polimi/db2/musicwishlist/entities/Seller.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/DB2_optional_project_GamifiedMarketingApplication.iml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/META-INF/persistence.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/META-INF/resources.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/Expense.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/MarketQuestion.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/MarketingQuestion.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/MissionStatus.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/Product.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/Project.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/Questionnaire.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/services/JPATxUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/services/MySqlTxUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/services/ProductService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/services/QuestionnaireService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/services/UserService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/Home.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/QuestionnairePage.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/CheckLogin.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/GetProductOfTheDay.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/GoToHomePage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/SubmitQuestionnaire.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/UpdateProfile.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/MissionExpensesEJB/ejbModule/META-INF/persistence.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/MissionExpensesEJB/ejbModule/META-INF/resources.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/MissionExpensesEJB/ejbModule/META-INF/tomee.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/MissionExpensesEJB/ejbModule/it/polimi/db2/mission/entities/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/MissionExpensesEJB/ejbModule/it/polimi/db2/mission/services/UserService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/MissionExpensesWeb/WebContent/WEB-INF/tomee.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/MissionExpensesWeb/WebContent/WEB-INF/web.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/MissionExpensesWeb/WebContent/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/MissionExpensesWeb/src/it/polimi/db2/controllers/CheckLogin.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tomee.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

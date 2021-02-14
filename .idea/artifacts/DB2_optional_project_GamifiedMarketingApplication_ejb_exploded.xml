@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="DB2_optional_project_GamifiedMarketingApplication:ejb exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/DB2_optional_project_GamifiedMarketingApplication_ejb_exploded</output-path>
+    <root id="root">
+      <element id="module-output" name="DB2_optional_project_GamifiedMarketingApplication" />
+      <element id="javaee-facet-resources" facet="DB2_optional_project_GamifiedMarketingApplication/web/Web" />
+      <element id="javaee-facet-resources" facet="DB2_optional_project_GamifiedMarketingApplication/ejb/EJB" />
+      <element id="jpa-descriptors" facet="DB2_optional_project_GamifiedMarketingApplication/jpa/JPA" />
+      <element id="artifact" artifact-name="DB2_optional_project_GamifiedMarketingApplication:war exploded" />
+    </root>
+  </artifact>
+</component>

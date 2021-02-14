@@ -1,0 +1,6 @@
+
+
+java:S1130"uRemove the declaration of thrown exception 'javax.persistence.NonUniqueResultException' which is a runtime exception.(õÅğ†ùÿÿÿÿ
+—
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒ„¿İ
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğöÅ98¿à„áù.

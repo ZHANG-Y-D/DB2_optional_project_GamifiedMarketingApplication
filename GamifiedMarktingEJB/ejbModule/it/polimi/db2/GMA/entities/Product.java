@@ -3,12 +3,15 @@ package it.polimi.db2.GMA.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 
 @Entity
 @Table(name = "Product", schema = "db_gamified_marketing_application")
+@NamedQuery(name = "Product.findProductsByDate", query = "SELECT p FROM Product p where p.Date = :date")
+@NamedQuery(name = "Product.findProductByName", query = "SELECT p FROM Product p where p.Name = :name")
+
 
 public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -19,6 +22,7 @@ public class Product implements Serializable {
 
     private String Name;
 
+//    @Temporal(TemporalType.DATE)
     private Date Date;
 
     private String Image;
@@ -28,7 +32,6 @@ public class Product implements Serializable {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "Product")
     List<MarketingQuestion> marketingQuestionsList;
-
 
     public Product(){
 

@@ -19,12 +19,11 @@ public class Questionnaire implements Serializable {
 
     private Timestamp Datetime;
 
-    private int Age;
+    private Integer Age;
 
-    private char Sex;
+    private String Sex;
 
     private String ExpertiseLevel;
-
 
 
     @ManyToOne
@@ -42,10 +41,7 @@ public class Questionnaire implements Serializable {
 //    @Column(name = "IDQuestion")
 //    private Map<MarketingQuestion, String> Question;
 
-
-
-    public Questionnaire(){
-    }
+    public Questionnaire(){}
 
     public int getId() {
         return id;
@@ -69,15 +65,15 @@ public class Questionnaire implements Serializable {
         return Age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         Age = age;
     }
 
-    public char getSex() {
+    public String getSex() {
         return Sex;
     }
 
-    public void setSex(char sex) {
+    public void setSex(String sex) {
         Sex = sex;
     }
 

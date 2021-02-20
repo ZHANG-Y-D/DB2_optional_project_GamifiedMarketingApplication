@@ -26,7 +26,7 @@ public class CheckLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private TemplateEngine templateEngine;
 
-	@EJB(name = "it.polimi.db2.mission.GMA/UserService")
+	@EJB(name = "it.polimi.db2.GMA.services/UserService")
 	private UserService usrService;
 
 	public CheckLogin() {

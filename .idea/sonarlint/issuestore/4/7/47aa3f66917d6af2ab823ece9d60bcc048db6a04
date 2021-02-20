@@ -1,0 +1,33 @@
+
+9
+java:S1128"Remove this duplicated import.(Ž²ð‡8ëÐŸ•ú.
+\
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(¯§Í¼8Ö¡‹•ú.
+W
+java:S1128"<Remove this unused import 'it.polimi.db2.GMA.entities.User'.(“ÁÓÌ8ëÐŸ•ú.
+D
+java:S1481")Remove this unused "path" local variable.(¯§Í¼8ÈÉ •ú.
+p
+java:S1989"PHandle the following exception that could be thrown by "sendError": IOException.(«±žëûÿÿÿÿ8Õà‹•ú.
+_
+java:S1128"?Remove this unused import 'it.polimi.db2.GMA.entities.Product'.(ÌÙ•¥þÿÿÿÿ8ëÐŸ•ú.
+S
+java:S1854"8Remove this useless assignment to local variable "path".(¯§Í¼8ÈÉ •ú.
+M
+java:S1135"2Complete the task associated to this TODO comment.(…ïœ†8ÀÜ¡•ú.
+
+java:S2178"fCorrect this "|" to "||" and extract the right operand to a variable if it should always be evaluated.(óïÓ¨8èó–•ú.
+Z
+java:S1161":Add the "@Override" annotation above this method signature(¡’…ùüÿÿÿÿ8Ù—ƒ•ú.
+9
+java:S1128"Remove this duplicated import.(Ç×Óô8ëÐŸ•ú.
+Z
+java:S1161":Add the "@Override" annotation above this method signature(þ³‚”ûÿÿÿÿ8Õà‹•ú.
+r
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»8Ù—ƒ•ú.
+9
+java:S1128"Remove this duplicated import.(ñÓøÓ8ëÐŸ•ú.
+9
+java:S1128"Remove this duplicated import.(û–¨8ëÐŸ•ú.
+w
+java:S1450"]Remove the "templateEngine" field and declare it as a local variable in the relevant methods.(‚º»8ÈÉ •ú.

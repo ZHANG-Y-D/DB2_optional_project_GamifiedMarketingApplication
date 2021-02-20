@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire Page</title>
+</head>
+<body>
+    <td th:text="${product.getName()}"> </td>
+    <form action="#" th:action="@{/GoToQuestionnaireStatisticalSection}" method="POST">
+        <fieldset>
+            <span th:each="mq:${product.getMarketingQuestionsList()}">
+                <p>
+                    <input type="text" th:name="${mq.getId()}" th:text="${mq.getQuestion()}" required />
+                </p>
+            </span>
+            <input type="hidden" name="productName" th:value="${product.getName()}">
+            <input type="submit" value="Next">
+        </fieldset>
+    </form>
+</body>
+</html>

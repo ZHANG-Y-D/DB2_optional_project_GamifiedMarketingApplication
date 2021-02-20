@@ -1,16 +1,11 @@
 package it.polimi.db2.controllers;
 
 import it.polimi.db2.GMA.services.ProductService;
+import it.polimi.db2.GMA.services.QuestionnaireService;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
-import it.polimi.db2.GMA.entities.Product;
-import it.polimi.db2.GMA.entities.User;
-import it.polimi.db2.GMA.services.ProductService;
-import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.context.WebContext;
-import org.thymeleaf.templatemode.TemplateMode;
-import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
+
 import javax.ejb.EJB;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -27,7 +22,7 @@ public class SubmitQuestionnaire extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private TemplateEngine templateEngine;
     @EJB(name = "it.polimi.db2.GMA.services/QuestionnaireService")
-    private ProductService pService;
+    private QuestionnaireService qService;
 
     public SubmitQuestionnaire() {
         super();
@@ -45,10 +40,9 @@ public class SubmitQuestionnaire extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-
         String product = request.getParameter("product");
 
-        if (product == null | product.isEmpty()) {
+        if (product == null || product.isEmpty()) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid query parameters");
             return;
         }
@@ -56,7 +50,7 @@ public class SubmitQuestionnaire extends HttpServlet {
         //Check if this product belongs to current day
         //TODO
 
-        String path = "/WEB-INF/QuestionnairePage.html";
+        String path = "/WEB-INF/QuestionnaireMarketingSection.html";
 //        List<Edition> results;
 //        ServletContext servletContext = getServletContext();
 //        final WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());

@@ -3,7 +3,7 @@
 <resources>
   <Resource id="GMADB" type="DataSource">
     JdbcDriver com.mysql.cj.jdbc.Driver
-    JdbcUrl jdbc:mysql://localhost:3306/db_gamified_marketing_application?serverTimezone=UTC
+    JdbcUrl jdbc:mysql://localhost:3306/db_gamified_marketing_application?serverTimezone=Europe/Rome
     UserName root
     Password mysql2020poli
   </Resource>

@@ -14,13 +14,10 @@
 
 	<h1>Welcome to the Gamified Marketing Application Home Page</h1>
 
-
-
-		<table>
-			<span th:each="p : ${products}">
-				<td th:text="${p.getName()}"></td>
-				<td th:text="${p.getDate()}"></td>
-				<img th:src="*{'data:image/png;base64,'+ p.getImage()}" />
+		<span th:each="p : ${products}">
+				<td th:text="${p.getName()}"></td> <br>
+				<td th:text="${p.getDate()}"></td> <br>
+				<img th:src="${'data:image/png;base64,'+ p.getImage()}"> <br>
 				<span th:each="mq : ${p.getMarketingQuestionsList()}">
 					<td th:text="${mq.getQuestion()}"></td> <br>
 					<span th:each="qa : ${mq.getQuestionnaireAnswerMap()}">
@@ -28,13 +25,13 @@
 						<td th:text="${qa.value}"></td><br>
 					</span>
 				</span>
-			</span>
-		</table>
-			>
 
-
-
-
-
+				<div th:if="${!p.getMarketingQuestionsList().isEmpty()}">
+					<a href="QuestionnaireMarketingSection.html"
+					   th:href = "@{/GoToQuestionnaireMarketingSection(productName=${p.getName()})}"
+					   th:text="${'Submit your Questionnaire For '+ p.getName()}"></a>
+				</div>
+		</span>
+	<p th:text=" ${errorMsg}"></p>
 </body>
 </html>

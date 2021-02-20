@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire Page</title>
+</head>
+
+<body>
+    <td th:text="${product.getName()}"> </td>
+    <form action="#" th:action="@{/SubmitQuestionnaire}" method="POST">
+        <fieldset>
+            Age: <input type="text" name="Age" > <br>
+            Sex: <select name="Sex" >
+                <option>I don't want to answer</option>
+                <option value="F">Female</option>
+                <option value="M">Male</option><br>
+            </select>
+
+            ExpertiseLevel: <select name="ExpertiseLevel" >
+                <option>I don't want to answer</option>
+                <option value="LOW">Low</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="HIGH">High</option> </select><br>
+            </select>
+
+            <input type="submit" value="Submit">
+
+
+
+        </fieldset>
+
+    </form>
+
+    <div>
+        <a th:href = "@{/CancelQuestionnaire(productName=${product.getName()})}"
+           th:text="Cancel"></a>
+
+        <a href="QuestionnaireMarketingSection.html"
+           th:href = "@{/GoToQuestionnaireMarketingSection(productName=${product.getName()})}"
+           th:text="Previous"></a>
+    </div>
+
+
+</body>
+</html>

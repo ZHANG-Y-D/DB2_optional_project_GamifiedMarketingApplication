@@ -13,6 +13,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/36691330-7399-458e-ac8f-309ebbd0bffc/console_1.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/36691330-7399-458e-ac8f-309ebbd0bffc/console_2.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/75c87c5a-0923-4c2d-b511-71d88782fcea/console.sql">
           <value>
             <set />
@@ -38,7 +48,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../../Z...Già superato/Tecnologie_Informatiche_per_il_web[Fraternali Piero]/5-Progetto-Project/validationAerialImages_ProgettoFacoltativo_2019-2020/WebContent/writeAnnotation.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../5-Code/JPA/4thVersion-MissionManagementProjectCodeDBAndSpecs/ExpensesWithProjects17propagationtest/MissionExpensesEJB/ejbModule/it/polimi/db2/mission/entities/Mission.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../5-Code/JPA/4thVersion-MissionManagementProjectCodeDBAndSpecs/ExpensesWithProjects17propagationtest/MissionExpensesEJB/ejbModule/it/polimi/db2/mission/entities/Project.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../5-Code/JPA/4thVersion-MissionManagementProjectCodeDBAndSpecs/ExpensesWithProjects17propagationtest/MissionExpensesEJB/ejbModule/it/polimi/db2/mission/entities/Teacher.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../5-Code/JPA/4thVersion-MissionManagementProjectCodeDBAndSpecs/ExpensesWithProjects17propagationtest/MissionExpensesEJB/ejbModule/it/polimi/db2/mission/entities/Teaxher.java">
           <value>
             <set />
           </value>
@@ -69,6 +99,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/DB2_optional_project_GamifiedMarketingApplication.iml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/META-INF/ejb-jar.xml">
           <value>
             <set />
           </value>
@@ -148,7 +183,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/Home.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/@{QuestionnairePage.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/Home.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/QuestionnaireMarketingSection.html">
           <value>
             <set />
           </value>
@@ -158,12 +208,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/QuestionnairePageMarketingSection.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/QuestionnaireStatisticalSection.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/index.html">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/CancelQuestionnaire.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/CheckLogin.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/DownloadProductQuestion.java">
           <value>
             <set />
           </value>
@@ -174,6 +244,36 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/GoToHomePage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/GoToQuestionnaireMarketingSection.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/GoToQuestionnaireStatisticalSection.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/QuestionnaireMarketingSection.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/QuestionnairePage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/QuestionnairePageMarketingSection.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/QuestionnaireStatisticalSection.java">
           <value>
             <set />
           </value>

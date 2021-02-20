@@ -9,7 +9,9 @@
         <webroots>
           <root url="file://$MODULE_DIR$/GamifiedMarktingWeb/WebContent" relative="/" />
         </webroots>
-        <sourceRoots />
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/GamifiedMarktingWeb/WebContent" />
+        </sourceRoots>
       </configuration>
     </facet>
     <facet type="jpa" name="JPA">

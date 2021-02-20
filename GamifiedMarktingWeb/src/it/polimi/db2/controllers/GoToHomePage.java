@@ -2,7 +2,6 @@ package it.polimi.db2.controllers;
 
 
 import it.polimi.db2.GMA.entities.Product;
-import it.polimi.db2.GMA.entities.User;
 import it.polimi.db2.GMA.services.ProductService;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
@@ -34,6 +33,7 @@ public class GoToHomePage extends HttpServlet {
         super();
     }
 
+
     public void init() throws ServletException {
         ServletContext servletContext = getServletContext();
         ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(servletContext);
@@ -46,6 +46,10 @@ public class GoToHomePage extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        //TODO Think about error box
+
+
+
         // If the user is not logged in (not present in session) redirect to the login
         String loginpath = getServletContext().getContextPath() + "/index.html";
         HttpSession session = request.getSession();
@@ -54,11 +58,10 @@ public class GoToHomePage extends HttpServlet {
             return;
         }
 
-
-        User user = (User) session.getAttribute("user");
         List<Product> products = null;
         try {
             Date date = Date.valueOf(LocalDate.now());
+
             products = pService.findProductsByDate(date);
             if (products == null) {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND, "Products resource not found");

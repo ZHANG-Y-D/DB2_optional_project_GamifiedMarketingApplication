@@ -7,17 +7,14 @@
 	<persistence-unit name="GamifiedMarketingEJB"
 		transaction-type="JTA">
 		<jta-data-source>GMADB</jta-data-source>
-		<class>it.polimi.db2.GMA.entities.Expense</class>
-		<class>it.polimi.db2.GMA.entities.Mission</class>
 		<class>it.polimi.db2.GMA.entities.User</class>
-		<class>it.polimi.db2.GMA.entities.Project</class>
-		<class>it.polimi.db2.GMA.entities.MySqlTransaction</class>
+		<class>it.polimi.db2.GMA.entities.Product</class>
+		<class>it.polimi.db2.GMA.entities.MarketingQuestion</class>
+		<class>it.polimi.db2.GMA.entities.Questionnaire</class>
 		<properties>
 			<property name="eclipselink.logging.level" value="FINE" />
 		</properties>
 	</persistence-unit>
-
-
 
 </persistence>
 

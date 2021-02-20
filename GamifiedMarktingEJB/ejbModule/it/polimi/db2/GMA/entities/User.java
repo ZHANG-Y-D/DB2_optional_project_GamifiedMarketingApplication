@@ -26,8 +26,6 @@ public class User implements Serializable {
 	@OrderBy("Datetime ASC")
 	List<Questionnaire> questionnaires;
 
-
-
 	public User() {
 	}
 

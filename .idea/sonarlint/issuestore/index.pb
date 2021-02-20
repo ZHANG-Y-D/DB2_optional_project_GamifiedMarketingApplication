@@ -27,3 +27,17 @@ u
 EGamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/Product.java,e/4/e428a86c4409e88c6c046679c93073bd8598c0e5
 |
 LGamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/services/ProductService.java,6/1/61472f5183b7903e6a86642c3a2ee4ca16430591
+m
+=GamifiedMarktingWeb/WebContent/WEB-INF/QuestionnairePage.html,e/4/e437e8bf9c02067c56f240dc2ffc727704ad8a57
+„
+TGamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/CredentialsException.java,3/0/3022ea7bfff1b2f19c26f49d97b02a229afb0852
+
+OGamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/MarketingQuestion.java,a/4/a4b3af5db2388f89f807647a2514bcf9ea30e6ec
+{
+KGamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/Questionnaire.java,c/8/c80b5be8ffd7c34f9395c1a1af7020a3ee13d79e
+m
+=GamifiedMarktingWeb/src/it/polimi/db2/controllers/Logout.java,c/e/ceb682154fef0609ffb4af9f5d099bd883af4fca
+‚
+RGamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/services/QuestionnaireService.java,8/1/815ffceae8626947d75105695cc183f0f070d53c
+z
+JGamifiedMarktingWeb/src/it/polimi/db2/controllers/SubmitQuestionnaire.java,4/7/47aa3f66917d6af2ab823ece9d60bcc048db6a04

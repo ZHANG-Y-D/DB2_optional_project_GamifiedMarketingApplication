@@ -5,8 +5,9 @@ import it.polimi.db2.GMA.entities.Product;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import java.sql.Date;
+
+
 import java.util.List;
 
 
@@ -18,10 +19,24 @@ public class ProductService {
     public ProductService() {
     }
 
+
     public List<Product> findProductsByDate(Date date) {
 
-        Query query = em.createQuery("SELECT p FROM Product p",Product.class);
-        return (List<Product>) query.getResultList();
+        List<Product> productList;
+        productList = em.createNamedQuery("Product.findProductsByDate", Product.class)
+                .setParameter("date", date)
+                .getResultList();
+        return productList;
     }
+
+    public Product findProductByName(String name) {
+
+        Product product;
+        product = em.createNamedQuery("Product.findProductByName", Product.class)
+                .setParameter("name", name)
+                .getResultList().get(0);
+        return product;
+    }
+
 }
 

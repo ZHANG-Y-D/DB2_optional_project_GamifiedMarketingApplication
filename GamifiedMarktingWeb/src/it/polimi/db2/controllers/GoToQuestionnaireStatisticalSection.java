@@ -60,29 +60,15 @@ public class GoToQuestionnaireStatisticalSection extends HttpServlet {
         }
 
         if (session.getAttribute("product") == null) {
+            request.getSession().setAttribute("errorMessage", "The product is invalid");
             response.sendRedirect(pathContext + "/HomePage");
             return;
         }
         Product product = (Product) session.getAttribute("product");
 
 
-        String productName = null;
-
-        try {
-            productName = request.getParameter("productName");
-            if (productName == null || productName.isEmpty() || !productName.equals(product.getName())) {
-                throw new Exception("This request is invalid");
-            }
-
-        } catch (Exception e) {
-            // for debugging only e.printStackTrace();
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "This request is invalid");
-            return;
-        }
-
-
         //All inputs of the marketing section are mandatory
-        Map<Integer,String> questionAnswerMap = new HashMap<>();
+        Map<MarketingQuestion,String> questionAnswerMap = new HashMap<>();
         for (MarketingQuestion mq : product.getMarketingQuestionsList())
         {
             int questionID = mq.getId();
@@ -97,10 +83,11 @@ public class GoToQuestionnaireStatisticalSection extends HttpServlet {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "You have to answer all the marketing question");
                 return;
             }
-            questionAnswerMap.put(questionID,answer);
+            questionAnswerMap.put(mq,answer);
         }
 
         if (questionAnswerMap.isEmpty()) {
+            request.getSession().setAttribute("errorMessage", "No marketing question is registered");
             response.sendRedirect(pathContext +"/HomePage");
             return;
         }

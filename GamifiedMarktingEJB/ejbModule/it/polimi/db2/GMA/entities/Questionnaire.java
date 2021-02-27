@@ -35,11 +35,13 @@ public class Questionnaire implements Serializable {
     private User User;
 
 
-//    @ElementCollection(fetch = FetchType.EAGER)
-//    @CollectionTable(name = "ContainMarketing",joinColumns = @JoinColumn(name = "IDQues"))
-//    @MapKeyJoinColumn(name = "MarketingQuestion")
-//    @Column(name = "IDQuestion")
-//    private Map<MarketingQuestion, String> Question;
+    @ElementCollection
+    @CollectionTable(name = "ContainMarketing",joinColumns = @JoinColumn(name = "IDQues"))
+    @MapKeyJoinColumn(name = "IDQuestion")
+    @MapKeyJoinColumn(name = "IDProduct")
+    @Column(name = "Answer")
+    private Map<MarketingQuestion, String> questionAnswerMap;
+
 
     public Questionnaire(){}
 
@@ -61,7 +63,7 @@ public class Questionnaire implements Serializable {
         Datetime = datetime;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return Age;
     }
 
@@ -99,5 +101,13 @@ public class Questionnaire implements Serializable {
 
     public void setUser(User user) {
         User = user;
+    }
+
+    public Map<MarketingQuestion, String> getQuestionAnswerMap() {
+        return questionAnswerMap;
+    }
+
+    public void setQuestionAnswerMap(Map<MarketingQuestion, String> questionAnswerMap) {
+        this.questionAnswerMap = questionAnswerMap;
     }
 }

@@ -10,7 +10,7 @@
     <td th:text="${product.getName()}"> </td>
     <form action="#" th:action="@{/SubmitQuestionnaire}" method="POST">
         <fieldset>
-            Age: <input type="text" name="Age" > <br>
+            Age: <input type="number" name="Age" min=0> <br>
             Sex: <select name="Sex" >
                 <option>I don't want to answer</option>
                 <option value="F">Female</option>
@@ -33,11 +33,11 @@
     </form>
 
     <div>
-        <a th:href = "@{/CancelQuestionnaire(productName=${product.getName()})}"
+        <a th:href = "@{/CancelQuestionnaire}"
            th:text="Cancel"></a>
 
         <a href="QuestionnaireMarketingSection.html"
-           th:href = "@{/GoToQuestionnaireMarketingSection(productName=${product.getName()})}"
+           th:href = "@{/GoToQuestionnaireMarketingSection}"
            th:text="Previous"></a>
     </div>
 

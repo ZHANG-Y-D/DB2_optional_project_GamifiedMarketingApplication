@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DB2_optional_project_GamifiedMarketingApplication:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>DB2_optional_project_GamifiedMarketingApplication</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="DB2_optional_project_GamifiedMarketingApplication-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="DB2_optional_project_GamifiedMarketingApplication:war exploded" />
+    </root>
+  </artifact>
+</component>

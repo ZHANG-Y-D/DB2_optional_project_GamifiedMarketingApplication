@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Create Product of the day</title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{/AdminCreateProductPage}" method="POST">
+    <fieldset>
+        Product Name: <input type="text" name="ProductName" required> <br>
+        Date: <input type="date" name="Date" required><br>
+        Image: <input type="file" name="image" required> <br>
+
+        <th:block th:each="i: ${#numbers.sequence(1, count)}">
+            <input type="text" th:name="${'question'+ i}" th:text="${'Question'+ i}" required /><br>
+        </th:block>
+
+        <a th:href = "@{/AdminCreateProductPage(count=${count})}" >Add A Question</a> <br>
+        <input type="submit" value="Submit">
+        <p th:text=" ${errorMsg}"></p>
+    </fieldset>
+</form>
+
+<a th:href = "@{/AdminHomePage}" >Go to Home Page</a> <br>
+</body>
+</html>

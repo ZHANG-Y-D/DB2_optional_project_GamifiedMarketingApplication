@@ -25,7 +25,7 @@ public class Product implements Serializable {
 //    @Temporal(TemporalType.DATE)
     private Date Date;
 
-    private String Image;
+    private byte[] Image;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "Product")
     List<Questionnaire> questionnaires;
@@ -70,11 +70,11 @@ public class Product implements Serializable {
         this.Date = date;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return Image;
     }
 
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         Image = image;
     }
 

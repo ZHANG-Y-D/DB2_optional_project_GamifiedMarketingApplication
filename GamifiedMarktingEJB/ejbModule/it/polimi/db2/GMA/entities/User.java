@@ -7,6 +7,8 @@ import java.util.List;
 @Entity
 @Table(name = "User", schema = "db_gamified_marketing_application")
 @NamedQuery(name = "User.checkCredentials", query = "SELECT r FROM User r  WHERE r.username = ?1 and r.password = ?2")
+@NamedQuery(name = "User.findAllUsersDescByPoints", query = "SELECT u FROM User u order by u.point DESC ")
+
 
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -21,6 +23,9 @@ public class User implements Serializable {
 
 	private String email;
 
+	private Integer point;
+
+	private Boolean IsBlocked;
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "User")
 	@OrderBy("Datetime ASC")
@@ -59,6 +64,27 @@ public class User implements Serializable {
 
 	public void setEmail(String email) { this.email = email; }
 
+	public Integer getPoint() {
+		return point;
+	}
 
+	public void setPoint(Integer point) {
+		this.point = point;
+	}
 
+	public Boolean getBlocked() {
+		return IsBlocked;
+	}
+
+	public void setBlocked(Boolean blocked) {
+		IsBlocked = blocked;
+	}
+
+	public List<Questionnaire> getQuestionnaires() {
+		return questionnaires;
+	}
+
+	public void setQuestionnaires(List<Questionnaire> questionnaires) {
+		this.questionnaires = questionnaires;
+	}
 }

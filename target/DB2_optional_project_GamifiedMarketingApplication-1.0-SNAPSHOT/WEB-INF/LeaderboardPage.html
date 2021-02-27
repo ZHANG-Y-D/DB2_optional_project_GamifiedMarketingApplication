@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../CSS/mystyle.css" th:href="@{/css/mystyle.css}" />
+</head>
+<body>
+
+<h1>Leader Board Today</h1>
+
+    <span th:each="u : ${userList}">
+        <td th:text="${u.getUsername()}"></td> 
+        <td th:text="${u.getPoint()}"></td> <br>
+    </span>
+</body>
+</html>

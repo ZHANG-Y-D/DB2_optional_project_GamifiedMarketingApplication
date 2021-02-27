@@ -3,6 +3,8 @@ package it.polimi.db2.controllers;
 
 import it.polimi.db2.GMA.entities.Product;
 import it.polimi.db2.GMA.entities.User;
+import it.polimi.db2.GMA.exceptions.AccountBlockedException;
+import it.polimi.db2.GMA.exceptions.QuestionnaireDoubleAnswerException;
 import it.polimi.db2.GMA.services.QuestionnaireService;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.thymeleaf.TemplateEngine;
@@ -10,6 +12,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 import javax.ejb.EJB;
+import javax.persistence.PersistenceException;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -62,28 +65,17 @@ public class CancelQuestionnaire extends HttpServlet {
         Product product = (Product) session.getAttribute("product");
         User user = (User) session.getAttribute("user");
 
-        String productName = null;
-        try {
-            productName = StringEscapeUtils.escapeJava(request.getParameter("productName"));
-            if (productName == null || productName.isEmpty() ) {
-                throw new Exception();
-            }
-        } catch (Exception e) {
-            // for debugging only e.printStackTrace();
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Product is invalid");
+
+        try{
+            qService.cancelAQuestionnaire(product,user);
+        }catch (QuestionnaireDoubleAnswerException |
+                AccountBlockedException |
+                PersistenceException e){
+            request.getSession().setAttribute("errorMessage", e.getMessage());
+            response.sendRedirect(pathContext + "/HomePage");
             return;
         }
 
-        //Check if the requested product equal the product in the session
-        if (!productName.equals(product.getName())){
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "You can't cancel this questionnaire");
-            return;
-        }
-
-        //TODO CHECK IF EXIST
-        qService.cancelAQuestionnaire(product,user);
-
-        //TODO Clean product session
         response.sendRedirect(pathContext + "/HomePage");
 
     }

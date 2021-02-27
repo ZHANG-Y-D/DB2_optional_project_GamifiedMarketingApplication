@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Java EE 6-Java EE 6">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/javax.jms.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJEE/javax.jms.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

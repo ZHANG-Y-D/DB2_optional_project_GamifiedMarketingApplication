@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../CSS/mystyle.css" th:href="@{/css/mystyle.css}" />
+</head>
+<body>
+
+<div align="right">
+    <p th:text="${'Admin Name: ' + session.admin.Name}"></p>
+    <a th:href="@{/Logout}">Logout</a>
+</div>
+
+<h1>Administrator Home Page</h1>
+
+<a th:href="@{/AdminCreateProductPage}">Creation product Page</a> <br>
+<a th:href="@{/AdminInspectionPage}">Inspection Page</a><br>
+<a th:href="@{/AdminDeletionPage}">Deletion Page</a><br>
+
+<p th:text=" ${errorMsg}"></p>
+</body>
+</html>

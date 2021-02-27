@@ -46,9 +46,6 @@ public class GoToHomePage extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        //TODO Think about error box
-
-
 
         // If the user is not logged in (not present in session) redirect to the login
         String loginpath = getServletContext().getContextPath() + "/index.html";
@@ -73,12 +70,20 @@ public class GoToHomePage extends HttpServlet {
             return;
         }
 
+
         // Redirect to the Home page to insert the product parameters
         String path = "/WEB-INF/Home.html";
         ServletContext servletContext = getServletContext();
         final WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
         ctx.setVariable("products", products);
+        if (session.getAttribute("errorMessage") != null){
+            ctx.setVariable("errorMsg", session.getAttribute("errorMessage"));
+        }
         templateEngine.process(path, ctx, response.getWriter());
+
+        request.getSession().removeAttribute("questionAnswerMap");
+        request.getSession().removeAttribute("product");
+        request.getSession().removeAttribute("errorMessage");
     }
 
     public void destroy() {

@@ -82,6 +82,7 @@ public class GoToQuestionnaireMarketingSection extends HttpServlet {
 
             //Check if the requested product actual has marketing Question
             if (product.getMarketingQuestionsList().isEmpty()){
+                request.getSession().setAttribute("errorMessage", "There is no marketing question for this product");
                 response.sendRedirect(pathContent+ "/HomePage");
                 return;
             }

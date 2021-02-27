@@ -1,6 +1,18 @@
 
-
-java:S1130"uRemove the declaration of thrown exception 'javax.persistence.NonUniqueResultException' which is a runtime exception.(õÅğ†ùÿÿÿÿ
-—
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒ„¿İ
-u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğöÅ98¿à„áù.
+•
+java:S1130"uRemove the declaration of thrown exception 'javax.persistence.NonUniqueResultException' which is a runtime exception.(²»Şìüÿÿÿÿ8×õµŸş.
+
+java:S1130"uRemove the declaration of thrown exception 'javax.persistence.NonUniqueResultException' which is a runtime exception.(õÅğ†ùÿÿÿÿ
+•
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒ„¿İ
+s	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğöÅ98¿à„áù.
+K
+java:S1172"+Remove this unused method parameter "date".(ïæ¶Üÿÿÿÿÿ8×õµŸş.
+‘
+java:S1130"qRemove the declaration of thrown exception 'javax.persistence.PersistenceException' which is a runtime exception.(ïæ¶Üÿÿÿÿÿ8×õµŸş.
+W
+java:S1128"7Remove this unused import 'java.sql.PreparedStatement'.(òÄ™ƒÿÿÿÿÿ8ËèÕŸş.
+H
+java:S1128"-Remove this unused import 'java.util.Base64'.(ëŠ»Õ8ËèÕŸş.
+I
+java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw8ËèÕŸş.

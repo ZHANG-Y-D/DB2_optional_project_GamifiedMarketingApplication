@@ -2,5 +2,4 @@
 ›
 java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(øş±,8ÇÔãŒú.
 y	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ù¶½Œøÿÿÿÿ8àß„áù.
-K
-java:S1948"+Make "questionnaires" private or transient.(¬âüÿÿÿÿ8´Ôòú.
+n	java:S116"TRename this field "IsBlocked" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó–‡ı8íä³Ÿş.

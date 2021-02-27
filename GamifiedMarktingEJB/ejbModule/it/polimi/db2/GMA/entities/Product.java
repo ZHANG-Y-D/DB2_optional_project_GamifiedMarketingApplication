@@ -4,6 +4,7 @@ package it.polimi.db2.GMA.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Base64;
 import java.util.List;
 
 
@@ -22,9 +23,9 @@ public class Product implements Serializable {
 
     private String Name;
 
-//    @Temporal(TemporalType.DATE)
     private Date Date;
 
+    @Lob
     private byte[] Image;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "Product")
@@ -72,6 +73,10 @@ public class Product implements Serializable {
 
     public byte[] getImage() {
         return Image;
+    }
+
+    public String getImageData() {
+        return Base64.getMimeEncoder().encodeToString(Image);
     }
 
     public void setImage(byte[] image) {

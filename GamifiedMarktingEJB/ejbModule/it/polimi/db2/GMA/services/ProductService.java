@@ -1,13 +1,15 @@
 package it.polimi.db2.GMA.services;
 
+import it.polimi.db2.GMA.entities.MarketingQuestion;
 import it.polimi.db2.GMA.entities.Product;
 import it.polimi.db2.GMA.exceptions.ProductCreationException;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.io.File;
+import javax.persistence.PersistenceException;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -38,33 +40,29 @@ public class ProductService {
         return product;
     }
 
-    public void createAProduct(String name, Date date, File image, List<String> questions) throws ProductCreationException {
-//
-//        Product product = new Product();
-//        product.setName(name);
-//        product.setDate(date);
-//
-//        byte[] bytes;
-//
-////        bytes = org.apache.commons.io.FileUtils.readFileToByteArray(image);
-//
-//        bytes=null;
-//        product.setImage(bytes);
-//        List<MarketingQuestion> marketingQuestionList = new ArrayList<>();
-//        for (String q:questions){
-//            MarketingQuestion marketingQuestion = new MarketingQuestion();
-//            marketingQuestion.setProduct(product);
-//            marketingQuestion.setQuestion(q);
-//            marketingQuestionList.add(marketingQuestion);
-//        }
-//        product.setMarketingQuestionsList(marketingQuestionList);
-//
-//        try {
-//            em.persist(product);
-//            em.flush();
-//        } catch (PersistenceException e){
-//            throw new ProductCreationException(e.getMessage());
-//        }
+    public void createAProduct(String name, Date date, byte[] image, List<String> questions) throws ProductCreationException {
+
+        Product product = new Product();
+        product.setName(name);
+        product.setDate(date);
+
+
+        product.setImage(image);
+        List<MarketingQuestion> marketingQuestionList = new ArrayList<>();
+        for (String q:questions){
+            MarketingQuestion marketingQuestion = new MarketingQuestion();
+            marketingQuestion.setProduct(product);
+            marketingQuestion.setQuestion(q);
+            marketingQuestionList.add(marketingQuestion);
+        }
+        product.setMarketingQuestionsList(marketingQuestionList);
+
+        try {
+            em.persist(product);
+            em.flush();
+        } catch (PersistenceException e){
+            throw new ProductCreationException(e.getMessage());
+        }
 
     }
 

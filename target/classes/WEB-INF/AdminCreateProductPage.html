@@ -7,7 +7,7 @@
 <body>
 
 
-<form action="#" th:action="@{/AdminCreateProductPage}" method="POST">
+<form action="#" th:action="@{/AdminCreateProductPage}" enctype="multipart/form-data" method="POST">
     <fieldset>
         Product Name: <input type="text" name="ProductName" required> <br>
         Date: <input type="date" name="Date" required><br>

@@ -17,7 +17,7 @@
 		<span th:each="p : ${products}">
 				<td th:text="${p.getName()}"></td> <br>
 				<td th:text="${p.getDate()}"></td> <br>
-				<img alt="photo" th:src="*{'data:image/png;base64,'+ p.getImage()}"><br>
+				<img width="100px" alt="photo" th:src="*{'data:image/png;base64,'+ p.getImageData()}"><br>
 				<span th:each="mq : ${p.getMarketingQuestionsList()}">
 					<td th:text="${mq.getQuestion()}"></td> <br>
 					<span th:each="qa : ${mq.getQuestionnaireAnswerMap()}">

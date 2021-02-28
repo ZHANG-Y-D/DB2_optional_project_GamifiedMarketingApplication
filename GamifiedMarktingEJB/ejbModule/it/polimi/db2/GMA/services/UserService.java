@@ -1,22 +1,17 @@
 package it.polimi.db2.GMA.services;
 
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceException;
-import javax.persistence.NonUniqueResultException;
-
 import it.polimi.db2.GMA.entities.Administrator;
 import it.polimi.db2.GMA.entities.Questionnaire;
 import it.polimi.db2.GMA.entities.User;
-import it.polimi.db2.GMA.exceptions.*;
+import it.polimi.db2.GMA.exceptions.CredentialsException;
 
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.NonUniqueResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceException;
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 
 @Stateless
@@ -43,28 +38,6 @@ public class UserService {
 		throw new NonUniqueResultException("More than one user registered with same credentials");
 	}
 
-	public List<User> findUsersAnsweredQuestionsOnADay(Date date) throws PersistenceException {
-		List<User> uList = null;
-		List<User> todayAnsweredUsers = new ArrayList<>();
-
-		try {
-			uList = em.createNamedQuery("User.findAllUsersDescByPoints",User.class).getResultList();
-		} catch (PersistenceException e) {
-			throw new PersistenceException(e.getMessage());
-		}
-		for (User u: uList){
-			for (Questionnaire q: u.getQuestionnaires()){
-				Date quesDate = Date.valueOf(q.getDatetime().toLocalDateTime().toLocalDate());
-				Date dateToday = Date.valueOf(LocalDate.now());
-				if (quesDate.equals(dateToday)) {
-					todayAnsweredUsers.add(u);
-					break;
-				}
-			}
-		}
-		return todayAnsweredUsers;
-	}
-
 	public Administrator checkAdminCredentials(String usrn, String pwd) throws CredentialsException, NonUniqueResultException {
 		List<Administrator> adminList = null;
 		try {
@@ -80,4 +53,49 @@ public class UserService {
 			return adminList.get(0);
 		throw new NonUniqueResultException("More than one user registered with same credentials");
 	}
+
+	public List<User> findUsersAnsweredQuestionsOnADay(Date dateToday) throws PersistenceException {
+		List<User> uList = null;
+		List<User> todayAnsweredUsers = new ArrayList<>();
+
+		try {
+			uList = em.createNamedQuery("User.findAllUsersDescByPoints",User.class).getResultList();
+		} catch (PersistenceException e) {
+			throw new PersistenceException(e.getMessage());
+		}
+		for (User u: uList){
+			for (Questionnaire q: u.getQuestionnaires()){
+				Date quesDate = Date.valueOf(q.getDatetime().toLocalDateTime().toLocalDate());
+				if (quesDate.equals(dateToday) && !q.getQuestionAnswerMap().isEmpty()) {
+					todayAnsweredUsers.add(u);
+					break;
+				}
+			}
+		}
+		return todayAnsweredUsers;
+	}
+
+	public List<User> findUsersCancelledQuestionnaireOnADay(Date dateToday) throws PersistenceException {
+		List<User> uList = null;
+		List<User> thisDayCancelledUsers = new ArrayList<>();
+
+		try {
+			uList = em.createNamedQuery("User.findAllUsersDescByPoints",User.class).getResultList();
+		} catch (PersistenceException e) {
+			throw new PersistenceException(e.getMessage());
+		}
+		for (User u: uList){
+			for (Questionnaire q: u.getQuestionnaires()){
+				Date quesDate = Date.valueOf(q.getDatetime().toLocalDateTime().toLocalDate());
+				if (quesDate.equals(dateToday) && q.getQuestionAnswerMap().isEmpty()) {
+					thisDayCancelledUsers.add(u);
+					break;
+				}
+			}
+		}
+		return thisDayCancelledUsers;
+	}
+
+
+
 }

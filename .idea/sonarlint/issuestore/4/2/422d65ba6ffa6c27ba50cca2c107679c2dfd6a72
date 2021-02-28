@@ -1,24 +1,24 @@
 
+k
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»
+S
+java:S1161":Add the "@Override" annotation above this method signature(¡’…ùüÿÿÿÿ
+d
+java:S1989"PHandle the following exception that could be thrown by "sendError": IOException.(ÚÿéÇ
+Z
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(Ù¯ñÉüÿÿÿÿ
 Y	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(üæÂã
-P
-java:S1128"<Remove this unused import 'it.polimi.db2.GMA.entities.User'.(“ÁÓÌ
+N
+java:S1161":Add the "@Override" annotation above this method signature(‚“¶î
+l
+java:S1989"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ÛÑé§þÿÿÿÿ
+d
+java:S1989"PHandle the following exception that could be thrown by "sendError": IOException.(Þ´Å»
 •
 java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
 S
-java:S1161":Add the "@Override" annotation above this method signature(¡’…ùüÿÿÿÿ
-S
 java:S1161":Add the "@Override" annotation above this method signature(þ³‚”ûÿÿÿÿ
-d
-java:S1989"PHandle the following exception that could be thrown by "sendError": IOException.(ÚÿéÇ
-d
-java:S1989"PHandle the following exception that could be thrown by "sendError": IOException.(Þ´Å»
-Z
-java:S1075"ARefactor your code to get this URI from a customizable parameter.(Ù¯ñÉüÿÿÿÿ
+P
+java:S1128"<Remove this unused import 'it.polimi.db2.GMA.entities.User'.(“ÁÓÌ
 d
 java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›
-l
-java:S1989"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ÛÑé§þÿÿÿÿ
-N
-java:S1161":Add the "@Override" annotation above this method signature(‚“¶î
-k
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»

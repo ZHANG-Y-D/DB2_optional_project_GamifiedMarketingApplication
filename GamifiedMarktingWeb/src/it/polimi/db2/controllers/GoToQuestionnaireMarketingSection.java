@@ -1,6 +1,7 @@
 package it.polimi.db2.controllers;
 
 import it.polimi.db2.GMA.entities.Product;
+import it.polimi.db2.GMA.exceptions.ProductFindException;
 import it.polimi.db2.GMA.services.ProductService;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.thymeleaf.TemplateEngine;
@@ -53,49 +54,46 @@ public class GoToQuestionnaireMarketingSection extends HttpServlet {
             return;
         }
 
-        String productName = null;
-        try {
-            productName = StringEscapeUtils.escapeJava(request.getParameter("productName"));
-            if (productName == null || productName.isEmpty()) {
-                throw new Exception();
-            }
-        } catch (Exception e) {
-            // for debugging only e.printStackTrace();
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Product is invalid");
-            return;
-        }
 
+        String productName = null;
         Product product = null;
 
-        try {
-            product = pService.findProductByName(productName);
-            if (product == null) {
-                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Products resource not found");
+        if (session.getAttribute("product") != null){
+            product = (Product)session.getAttribute("product");
+        }else {
+            try {
+                productName = StringEscapeUtils.escapeJava(request.getParameter("productName"));
+                if (productName == null || productName.isEmpty()) {
+                    throw new ProductFindException("ProductName is Invalid");
+                }
+                product = pService.findProductByName(productName);
+                if (product == null) {
+                    throw new ProductFindException("Products resource not found");
+                }
+            } catch (ProductFindException e) {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
                 return;
             }
+        }
 
-            //Check if the requested product is today's product
-            if (!product.getDate().equals(Date.valueOf(LocalDate.now()))) {
-                response.sendError(HttpServletResponse.SC_FORBIDDEN, "The requested product is not today's product");
-                return;
-            }
 
-            //Check if the requested product actual has marketing Question
-            if (product.getMarketingQuestionsList().isEmpty()){
-                request.getSession().setAttribute("errorMessage", "There is no marketing question for this product");
-                response.sendRedirect(pathContent+ "/HomePage");
-                return;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Not possible to get the product");
+        //Check if the requested product is today's product
+        if (!product.getDate().equals(Date.valueOf(LocalDate.now()))) {
+            response.sendError(HttpServletResponse.SC_FORBIDDEN, "The requested product is not today's product");
             return;
         }
 
+
+        //Check if the requested product actual has marketing Question
+        if (product.getMarketingQuestionsList().isEmpty()){
+            request.getSession().setAttribute("errorMessage", "There is no marketing question for this product");
+            response.sendRedirect(pathContent+ "/HomePage");
+            return;
+        }
 
         request.getSession().setAttribute("product", product);
 
-        // Redirect to the Home page to insert the product parameters
+
         String path = "/WEB-INF/QuestionnaireMarketingSection.html";
         ServletContext servletContext = getServletContext();
         final WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());

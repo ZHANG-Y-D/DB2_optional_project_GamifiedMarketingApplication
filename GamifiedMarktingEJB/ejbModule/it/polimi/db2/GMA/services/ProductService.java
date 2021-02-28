@@ -18,6 +18,7 @@ public class ProductService {
     @PersistenceContext(unitName = "GamifiedMarketingEJB")
     private EntityManager em;
 
+
     public ProductService() {
     }
 
@@ -45,7 +46,6 @@ public class ProductService {
         Product product = new Product();
         product.setName(name);
         product.setDate(date);
-
 
         product.setImage(image);
         List<MarketingQuestion> marketingQuestionList = new ArrayList<>();

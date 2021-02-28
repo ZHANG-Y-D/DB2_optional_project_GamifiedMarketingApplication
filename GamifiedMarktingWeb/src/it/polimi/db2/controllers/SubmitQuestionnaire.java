@@ -5,7 +5,6 @@ import it.polimi.db2.GMA.entities.Product;
 import it.polimi.db2.GMA.entities.User;
 import it.polimi.db2.GMA.exceptions.AccountBlockedException;
 import it.polimi.db2.GMA.exceptions.QuestionnaireDoubleAnswerException;
-import it.polimi.db2.GMA.services.ProductService;
 import it.polimi.db2.GMA.services.QuestionnaireService;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.thymeleaf.TemplateEngine;
@@ -22,7 +21,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -74,7 +72,8 @@ public class SubmitQuestionnaire extends HttpServlet {
 
         User user = (User) session.getAttribute("user");
         Product product = (Product) session.getAttribute("product");
-        Map<MarketingQuestion,String> questionAnswerMap = (Map<MarketingQuestion,String>) session.getAttribute("questionAnswerMap");
+        Map<MarketingQuestion,String> questionAnswerMap =
+                (Map<MarketingQuestion,String>) session.getAttribute("questionAnswerMap");
 
         Integer age = null;
         String sex = null;

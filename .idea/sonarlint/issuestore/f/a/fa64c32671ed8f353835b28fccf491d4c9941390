@@ -1,0 +1,19 @@
+
+c
+java:S1192:"MDefine a constant instead of duplicating this literal "errorMessage" 3 times.(ŽÀ¶ç
+—
+java:S1186C"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
+U
+java:S1161":Add the "@Override" annotation above this method signature(¡’…ùüÿÿÿÿ
+P
+java:S1161(":Add the "@Override" annotation above this method signature(÷¤‹ú
+n
+java:S19890"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ÎæÎøþÿÿÿÿ
+W
+java:S10757"ARefactor your code to get this URI from a customizable parameter.(Ðæ²ã
+f
+java:S1989="PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›
+P
+java:S1161C":Add the "@Override" annotation above this method signature(‚“¶î
+m
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»

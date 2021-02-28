@@ -1,0 +1,22 @@
+
+Z	java:S112<"FDefine and throw a dedicated exception instead of using a generic one.(‰Æáe
+—
+java:S1186j"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
+U
+java:S1161$":Add the "@Override" annotation above this method signature(¡’…ùüÿÿÿÿ
+P
+java:S1161-":Add the "@Override" annotation above this method signature(÷¤‹ú
+i
+java:S19894"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ëÑ¼
+f
+java:S1989@"PHandle the following exception that could be thrown by "sendError": IOException.(ÄÙ‡Ë
+k
+java:S1989["PHandle the following exception that could be thrown by "sendError": IOException.(–ıèòúÿÿÿÿ
+W
+java:S1075c"ARefactor your code to get this URI from a customizable parameter.(¥—ß¼
+f
+java:S1989g"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›
+P
+java:S1161j":Add the "@Override" annotation above this method signature(‚“¶î
+m
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»

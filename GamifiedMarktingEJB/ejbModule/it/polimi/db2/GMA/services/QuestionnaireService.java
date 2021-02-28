@@ -4,17 +4,15 @@ import it.polimi.db2.GMA.entities.MarketingQuestion;
 import it.polimi.db2.GMA.entities.Product;
 import it.polimi.db2.GMA.entities.Questionnaire;
 import it.polimi.db2.GMA.entities.User;
+import it.polimi.db2.GMA.exceptions.AccountBlockedException;
+import it.polimi.db2.GMA.exceptions.QuestionnaireDoubleAnswerException;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
-import java.sql.Date;
 import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.util.Map;
-
-import it.polimi.db2.GMA.exceptions.*;
 
 import static java.lang.Boolean.TRUE;
 
@@ -104,8 +102,5 @@ public class QuestionnaireService {
             throw new AccountBlockedException("Your submitted answer contain offensive words, " +
                     "your account is blocked");
         }
-
     }
-
-
 }

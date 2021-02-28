@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="ISO-8859-1">
+    <title>Create Product of the day</title>
 </head>
 <body>
 
+
+<form action="#" th:action="@{/AdminInspectionPage}" method="POST">
+    <fieldset>
+        Date: <input type="date" name="Date" required><br>
+
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+<td>List of users who submitted the questionnaire:</td> <br>
+<span th:each="su : ${submittedUserList}">
+    <td th:text="${su.getUsername()}"></td> <br>
+</span>
+
+<td>List of users who cancelled the questionnaire</td> <br>
+<span th:each="cu : ${cancelledUserList}">
+    <td th:text="${cu.getUsername()}"></td> <br>
+</span>
+
+
+
+<!--//TODO-->
+<td >Questionnaire answers of each user</td><br>
+<span th:each="su : ${submittedUserList}">
+	<td th:text="${su.getUsername()}"></td> <br>
+	<span th:each="uq : ${su.getQuestionnaires()}">
+
+	<div th:if="${#dates(uq.getDatetime()) == date}">
+		<td th:text="${uq.getProduct().getName()}"></td> <br>
+		<span th:each="qa : ${uq.getQuestionAnswerMap()}">
+			<td th:text="${qa.key.getQuestion()}"></td><br>
+			<td th:text="${qa.value}"></td><br>
+		</span>
+	</div>
+
+	</span>
+</span>
+
+
+
+
+<p th:text=" ${errorMsg}"></p>
+<a th:href = "@{/AdminHomePage}" >Go to Home Page</a> <br>
 </body>
 </html>

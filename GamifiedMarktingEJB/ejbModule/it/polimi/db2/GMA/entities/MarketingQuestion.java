@@ -34,8 +34,6 @@ public class MarketingQuestion implements Serializable {
 
     }
 
-
-
     public String getQuestion() {
         return Question;
     }
@@ -43,9 +41,7 @@ public class MarketingQuestion implements Serializable {
     public void setQuestion(String question) {
         Question = question;
     }
-
-
-
+    
     public int getId() {
         return id;
     }

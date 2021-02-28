@@ -9,6 +9,7 @@ import java.util.Map;
 @Entity
 @Table(name = "Questionnaire", schema = "db_gamified_marketing_application")
 
+
 public class Questionnaire implements Serializable {
 
     private static final long serialVersionUID = 1L;

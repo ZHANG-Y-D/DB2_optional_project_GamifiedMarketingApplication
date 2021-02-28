@@ -2,16 +2,12 @@ package it.polimi.db2.controllers;
 
 import it.polimi.db2.GMA.entities.MarketingQuestion;
 import it.polimi.db2.GMA.entities.Product;
-import it.polimi.db2.GMA.entities.User;
-import it.polimi.db2.GMA.services.ProductService;
-import it.polimi.db2.GMA.services.QuestionnaireService;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
-import javax.ejb.EJB;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,9 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Date;
-import java.text.Format;
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,6 +30,7 @@ public class GoToQuestionnaireStatisticalSection extends HttpServlet {
         super();
     }
 
+    @Override
     public void init() throws ServletException {
         ServletContext servletContext = getServletContext();
         ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(servletContext);
@@ -46,9 +40,9 @@ public class GoToQuestionnaireStatisticalSection extends HttpServlet {
         templateResolver.setSuffix(".html");
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
 
         // If the user is not logged in (not present in session) redirect to the login
         String pathContext = getServletContext().getContextPath() ;
@@ -101,7 +95,7 @@ public class GoToQuestionnaireStatisticalSection extends HttpServlet {
         templateEngine.process(path, ctx, response.getWriter());
     }
 
+    @Override
     public void destroy() {
     }
-
 }

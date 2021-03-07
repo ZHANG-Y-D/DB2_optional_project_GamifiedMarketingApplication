@@ -44,7 +44,7 @@ public class UserService {
 			adminList = em.createNamedQuery("Admin.checkCredentials",
 					Administrator.class).setParameter(1, usrn).setParameter(2, pwd)
 					.getResultList();
-		} catch (PersistenceException e) {
+		} catch (Exception e) {
 			throw new CredentialsException("Could not verify credentials");
 		}
 		if (adminList.isEmpty())
@@ -95,7 +95,5 @@ public class UserService {
 		}
 		return thisDayCancelledUsers;
 	}
-
-
 
 }

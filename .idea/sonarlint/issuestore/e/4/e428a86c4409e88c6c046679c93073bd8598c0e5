@@ -1,11 +1,11 @@
 
-P
-java:S1948#"3Make "marketingQuestionsList" private or transient.(Ò°šÙ8á®‘¬ş.
 p	java:S116"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¬­Áøÿÿÿÿ8á®‘¬ş.
-£
-java:S1186%"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(í³‚üÿÿÿÿ8á®‘¬ş.
 M
 java:S1948 "+Make "questionnaires" private or transient.(¬âüÿÿÿÿ8á®‘¬ş.
+£
+java:S1186%"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(í³‚üÿÿÿÿ8á®‘¬ş.
 q	java:S116"PRename this field "Image" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö¥ó‹ıÿÿÿÿ8á®‘¬ş.
+P
+java:S1948#"3Make "marketingQuestionsList" private or transient.(Ò°šÙ8á®‘¬ş.
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ù¶½Œøÿÿÿÿ8á®‘¬ş.
 p	java:S116"ORename this field "Date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÂÿÿÿÿÿ8á®‘¬ş.

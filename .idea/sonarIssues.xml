@@ -168,6 +168,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/DeletionQuestionnaireException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/OtherException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/ProductFindException.java">
           <value>
             <set />
@@ -203,12 +213,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/Register.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/@{QuestionnairePage.html">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/AdminCreateProductPage.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/AdminDelectionPage.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/AdminDeletionPage.html">
           <value>
             <set />
           </value>
@@ -249,6 +274,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/AdminCreateProductPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/AdminDeletionPage.java">
           <value>
             <set />
           </value>
@@ -309,6 +339,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/QuestionnaireStatisticalSection.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/src/it/polimi/db2/controllers/Register.java">
           <value>
             <set />
           </value>

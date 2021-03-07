@@ -8,6 +8,7 @@ import java.util.Map;
 
 @Entity
 @Table(name = "Questionnaire", schema = "db_gamified_marketing_application")
+@NamedQuery(name = "Questionnaire.findAllQuestionnaireOrderByDatetime", query = "SELECT q FROM Questionnaire q order by q.Datetime ASC ")
 
 
 public class Questionnaire implements Serializable {
@@ -39,7 +40,7 @@ public class Questionnaire implements Serializable {
     @ElementCollection
     @CollectionTable(name = "ContainMarketing",joinColumns = @JoinColumn(name = "IDQues"))
     @MapKeyJoinColumn(name = "IDQuestion")
-    @MapKeyJoinColumn(name = "IDProduct")
+    @MapKeyJoinColumn(name = "IDProduct",referencedColumnName = "Product")
     @Column(name = "Answer")
     private Map<MarketingQuestion, String> questionAnswerMap;
 
@@ -53,8 +54,6 @@ public class Questionnaire implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
-
-
 
     public Timestamp getDatetime() {
         return Datetime;

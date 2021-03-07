@@ -6,6 +6,10 @@
 </head>
 <body>
 
+<div align="right">
+	<a th:href = "@{/AdminHomePage}" >Admin Home Page</a> <br>
+</div>
+
 
 <form action="#" th:action="@{/AdminInspectionPage}" method="POST">
     <fieldset>
@@ -20,18 +24,20 @@
     <td th:text="${su.getUsername()}"></td> <br>
 </span>
 
-<td>List of users who cancelled the questionnaire</td> <br>
+<td>List of users who cancelled the questionnaire:</td> <br>
 <span th:each="cu : ${cancelledUserList}">
     <td th:text="${cu.getUsername()}"></td> <br>
 </span>
 
 
-<td >Questionnaire answers of each user</td><br>
+
+<td >Questionnaire answers of each user:</td><br>
 <span th:each="su : ${submittedUserList}">
 	<td th:text="${su.getUsername()}"></td> <br>
 	<span th:each="uq : ${su.getQuestionnaires()}">
 
-	<div th:if="${#dates(uq.getDatetime()) == date}">
+	<div th:if="${(#dates.format(uq.getDatetime(), 'dd-MMM-yyyy') == #dates.format(date, 'dd-MMM-yyyy'))
+					&& !uq.getQuestionAnswerMap().isEmpty()}">
 		<td th:text="${uq.getProduct().getName()}"></td> <br>
 		<span th:each="qa : ${uq.getQuestionAnswerMap()}">
 			<td th:text="${qa.key.getQuestion()}"></td><br>
@@ -46,6 +52,6 @@
 
 
 <p th:text=" ${errorMsg}"></p>
-<a th:href = "@{/AdminHomePage}" >Go to Home Page</a> <br>
+
 </body>
 </html>

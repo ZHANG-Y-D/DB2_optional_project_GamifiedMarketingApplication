@@ -117,11 +117,6 @@ public class AdminInspectionPage extends HttpServlet {
             return;
         }
 
-        //TODO resolve this problem
-        if (session.getAttribute("date") == null){
-            request.getSession().setAttribute("errorMessage", "No date value!");
-        }
-
 
         String path = "/WEB-INF/AdminInspectionPage.html";
         ServletContext servletContext = getServletContext();
@@ -129,8 +124,7 @@ public class AdminInspectionPage extends HttpServlet {
         if (session.getAttribute("errorMessage") != null){
             ctx.setVariable("errorMsg", session.getAttribute("errorMessage"));
             request.getSession().removeAttribute("errorMessage");
-        }else if (session.getAttribute("submittedUserList") != null ||
-                session.getAttribute("cancelledUserList") != null){
+        }else if (session.getAttribute("date") != null){
 
             ctx.setVariable("submittedUserList", session.getAttribute("submittedUserList"));
             ctx.setVariable("cancelledUserList", session.getAttribute("cancelledUserList"));
@@ -140,7 +134,6 @@ public class AdminInspectionPage extends HttpServlet {
             request.getSession().removeAttribute("cancelledUserList");
             request.getSession().removeAttribute("date");
         }
-
 
         templateEngine.process(path, ctx, response.getWriter());
     }

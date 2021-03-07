@@ -1,12 +1,19 @@
 package it.polimi.db2.controllers;
 
+import it.polimi.db2.GMA.entities.Questionnaire;
+import it.polimi.db2.GMA.entities.User;
+import it.polimi.db2.GMA.exceptions.DeletionQuestionnaireException;
+import it.polimi.db2.GMA.exceptions.OtherException;
 import it.polimi.db2.GMA.services.ProductService;
+import it.polimi.db2.GMA.services.QuestionnaireService;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 import javax.ejb.EJB;
+import javax.persistence.PersistenceException;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,13 +22,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.Date;
+import java.util.List;
 
 @WebServlet("/AdminDeletionPage")
 public class AdminDeletionPage extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private TemplateEngine templateEngine;
-    @EJB(name = "it.polimi.db2.GMA.services/ProductService")
-    private ProductService pService;
+    @EJB(name = "it.polimi.db2.GMA.services/QuestionnaireService")
+    private QuestionnaireService qService;
 
     public AdminDeletionPage() {
         super();
@@ -42,27 +51,60 @@ public class AdminDeletionPage extends HttpServlet {
 
 
         // If admin user is not logged in (not present in session) redirect to the login
-        String loginpath = getServletContext().getContextPath() + "/AdminLogin.html";
+        String pathContext = getServletContext().getContextPath();
         HttpSession session = request.getSession();
         if (session.isNew() || session.getAttribute("admin") == null) {
-            response.sendRedirect(loginpath);
+            response.sendRedirect(pathContext+ "/AdminLogin.html");
+            return;
+        }
+
+        String path = "/WEB-INF/AdminDeletionPage.html";
+        ServletContext servletContext = getServletContext();
+        final WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
+
+        Integer questionnaireID;
+        String errorMessage = null;
+
+        try {
+            questionnaireID = Integer.valueOf(StringEscapeUtils.escapeJava(request.getParameter("questionnaireID")));
+        }catch (NumberFormatException e){
+            questionnaireID = null;
+        }
+
+        if (questionnaireID != null) {
+            try {
+                qService.deleteQuestionnaire(questionnaireID);
+            } catch (DeletionQuestionnaireException | OtherException e) {
+                ctx.setVariable("errorMsg", e.getMessage());
+                templateEngine.process(path, ctx, response.getWriter());
+                return;
+            }
+            errorMessage = "Deleted questionnaire successfully!";
+        }
+
+        List<Questionnaire> questionnaireList;
+
+        try {
+            questionnaireList = qService.getAllQuestionnaire();
+        }catch (PersistenceException e){
+            ctx.setVariable("errorMsg", e.getMessage());
+            templateEngine.process(path, ctx, response.getWriter());
             return;
         }
 
 
-
-        // Redirect to the Home page to insert the product parameters
-        String path = "/WEB-INF/AdminHomePage.html";
-        ServletContext servletContext = getServletContext();
-        final WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
-        if (session.getAttribute("errorMessage") != null){
-            ctx.setVariable("errorMsg", session.getAttribute("errorMessage"));
+        if (questionnaireList.isEmpty()){
+            ctx.setVariable("errorMsg", "No questionnaire yet");
+            templateEngine.process(path, ctx, response.getWriter());
+            return;
         }
+
+        ctx.setVariable("errorMsg",errorMessage);
+        ctx.setVariable("questionnaireList", questionnaireList);
         templateEngine.process(path, ctx, response.getWriter());
-
-
-        request.getSession().removeAttribute("errorMessage");
     }
+
+
 
     public void destroy() {
     }

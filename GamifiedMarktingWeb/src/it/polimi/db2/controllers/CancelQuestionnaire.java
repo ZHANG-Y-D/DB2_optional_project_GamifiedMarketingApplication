@@ -4,6 +4,7 @@ package it.polimi.db2.controllers;
 import it.polimi.db2.GMA.entities.Product;
 import it.polimi.db2.GMA.entities.User;
 import it.polimi.db2.GMA.exceptions.AccountBlockedException;
+import it.polimi.db2.GMA.exceptions.OtherException;
 import it.polimi.db2.GMA.exceptions.QuestionnaireDoubleAnswerException;
 import it.polimi.db2.GMA.services.QuestionnaireService;
 import org.apache.commons.lang.StringEscapeUtils;
@@ -70,7 +71,7 @@ public class CancelQuestionnaire extends HttpServlet {
             qService.cancelAQuestionnaire(product,user);
         }catch (QuestionnaireDoubleAnswerException |
                 AccountBlockedException |
-                PersistenceException e){
+                OtherException e){
             request.getSession().setAttribute("errorMessage", e.getMessage());
             response.sendRedirect(pathContext + "/HomePage");
             return;

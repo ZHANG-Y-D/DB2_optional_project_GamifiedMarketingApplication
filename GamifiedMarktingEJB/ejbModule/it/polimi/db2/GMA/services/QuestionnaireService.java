@@ -5,13 +5,17 @@ import it.polimi.db2.GMA.entities.Product;
 import it.polimi.db2.GMA.entities.Questionnaire;
 import it.polimi.db2.GMA.entities.User;
 import it.polimi.db2.GMA.exceptions.AccountBlockedException;
+import it.polimi.db2.GMA.exceptions.DeletionQuestionnaireException;
+import it.polimi.db2.GMA.exceptions.OtherException;
 import it.polimi.db2.GMA.exceptions.QuestionnaireDoubleAnswerException;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
+import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Map;
 
 import static java.lang.Boolean.TRUE;
@@ -26,7 +30,9 @@ public class QuestionnaireService {
     public QuestionnaireService() {
     }
 
-    public void cancelAQuestionnaire(Product product, User user) throws QuestionnaireDoubleAnswerException, AccountBlockedException {
+
+    public void cancelAQuestionnaire(Product product, User user) throws QuestionnaireDoubleAnswerException,
+                                                AccountBlockedException, OtherException {
 
         long now = System.currentTimeMillis();
         Timestamp sqlTimestamp = new Timestamp(now);
@@ -38,13 +44,13 @@ public class QuestionnaireService {
         try {
             em.persist(questionnaire);
             em.flush();
-        }catch (PersistenceException persistenceException){
-            if(persistenceException.getMessage().contains("your account is blocked")){
+        }catch (Exception e){
+            if(e.getMessage().contains("blocked")){
                 throw new AccountBlockedException("Your account is blocked");
-            }else if((persistenceException.getMessage().contains("Duplicate"))) {
+            }else if((e.getMessage().contains("Duplicate"))) {
                 throw new QuestionnaireDoubleAnswerException("You have already answered/canceled for this questionnaire");
             } else {
-                throw new PersistenceException(persistenceException.getMessage());
+                throw new OtherException(e.getMessage());
             }
         }
 
@@ -54,7 +60,7 @@ public class QuestionnaireService {
     public void submitAQuestionnaire(Product product, User user,
                                      Integer age, String sex, String expertiseLevel,
                                      Map<MarketingQuestion,String> questionAnswerMap)
-            throws QuestionnaireDoubleAnswerException, AccountBlockedException {
+            throws QuestionnaireDoubleAnswerException, AccountBlockedException, PersistenceException, OtherException {
 
 
         long now = System.currentTimeMillis();
@@ -87,13 +93,13 @@ public class QuestionnaireService {
         try {
             em.persist(questionnaire);
             em.flush();
-        }catch (PersistenceException persistenceException){
-            if(persistenceException.getMessage().contains("Your account is blocked")){
+        }catch (Exception e){
+            if(e.getMessage().contains("Your account is blocked")){
                 throw new AccountBlockedException("Your account is already blocked");
-            }else if((persistenceException.getMessage().contains("Duplicate"))) {
+            }else if((e.getMessage().contains("Duplicate"))) {
                 throw new QuestionnaireDoubleAnswerException("You have already answered/canceled for this questionnaire");
             } else {
-                throw new PersistenceException(persistenceException.getMessage());
+                throw new OtherException(e.getMessage());
             }
         }
 
@@ -102,5 +108,34 @@ public class QuestionnaireService {
             throw new AccountBlockedException("Your submitted answer contain offensive words, " +
                     "your account is blocked");
         }
+    }
+
+    public List<Questionnaire> getAllQuestionnaire(){
+
+        List<Questionnaire> questionnaireList = null;
+
+        try {
+            questionnaireList = em.createNamedQuery("Questionnaire.findAllQuestionnaireOrderByDatetime",Questionnaire.class).getResultList();
+        } catch (PersistenceException e) {
+            throw new PersistenceException(e.getMessage());
+        }
+        return questionnaireList;
+    }
+
+    public void deleteQuestionnaire(Integer questionnaireID) throws DeletionQuestionnaireException,OtherException {
+
+        try {
+            Questionnaire questionnaire = em.find(Questionnaire.class,questionnaireID);
+            em.remove(questionnaire);
+            em.flush();
+        }catch (Exception e){
+            if (e.getMessage().contains("Delete only for the preceding date")){
+                throw new DeletionQuestionnaireException("Deletion should be possible " +
+                        "only for a date preceding the current date.");
+            }else {
+                throw new OtherException(e.getMessage());
+            }
+        }
+
     }
 }

@@ -7,7 +7,6 @@ import it.polimi.db2.GMA.exceptions.ProductCreationException;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceException;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +25,7 @@ public class ProductService {
     public List<Product> findProductsByDate(Date date) {
 
         List<Product> productList;
+
         productList = em.createNamedQuery("Product.findProductsByDate", Product.class)
                 .setParameter("date", date)
                 .getResultList();
@@ -60,7 +60,7 @@ public class ProductService {
         try {
             em.persist(product);
             em.flush();
-        } catch (PersistenceException e){
+        } catch (Exception e){
             throw new ProductCreationException(e.getMessage());
         }
 

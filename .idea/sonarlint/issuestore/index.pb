@@ -76,3 +76,11 @@ z
 JGamifiedMarktingWeb/src/it/polimi/db2/controllers/AdminInspectionPage.java,3/6/36694b7c1596af2f4f795a7d8dfea670f9ffb9cd
 o
 ?GamifiedMarktingWeb/WebContent/WEB-INF/AdminInspectionPage.html,8/e/8e275fc0502e47b29b03ac72ff8403508d0e13b9
+‡
+WGamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/AccountBlockedException.java,7/1/712fbad5ca652755aec08236ce450bc5e074e690
+y
+IGamifiedMarktingWeb/WebContent/WEB-INF/QuestionnaireMarketingSection.html,d/b/db70b1e909b967c3af01ef92e6aa4517fd91f703
+k
+;GamifiedMarktingWeb/WebContent/WEB-INF/LeaderboardPage.html,9/a/9acd756680fe003bbd580197ec172116e7b4e5db
+„
+TGamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/ProductFindException.java,f/b/fb5720e3f21fcc927c1b9fc35c446e8c60d33a38

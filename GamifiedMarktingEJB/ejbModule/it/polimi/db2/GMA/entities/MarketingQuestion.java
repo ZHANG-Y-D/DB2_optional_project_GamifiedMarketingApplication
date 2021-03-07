@@ -22,12 +22,11 @@ public class MarketingQuestion implements Serializable {
     private Product Product;
 
     @ElementCollection
-    @CollectionTable(name = "ContainMarketing",joinColumns = @JoinColumn(name = "IDQuestion"))
+    @CollectionTable(name = "ContainMarketing",joinColumns = @JoinColumn(name = "IDQuestion"),foreignKey = @ForeignKey(name = "IDProduct"))
     @MapKeyJoinColumn(name = "IDQues")
+    @MapKeyJoinColumn(name = "IDProduct",referencedColumnName = "Product")
     @Column(name = "Answer")
     private Map<Questionnaire, String> questionnaireAnswerMap;
-
-
 
 
     public MarketingQuestion() {
@@ -41,7 +40,7 @@ public class MarketingQuestion implements Serializable {
     public void setQuestion(String question) {
         Question = question;
     }
-    
+
     public int getId() {
         return id;
     }

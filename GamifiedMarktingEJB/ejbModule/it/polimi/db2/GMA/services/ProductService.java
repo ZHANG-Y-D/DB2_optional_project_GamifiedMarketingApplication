@@ -5,6 +5,7 @@ import it.polimi.db2.GMA.entities.Product;
 import it.polimi.db2.GMA.exceptions.ProductCreationException;
 
 import javax.ejb.Stateless;
+import javax.persistence.CacheStoreMode;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.sql.Date;
@@ -29,6 +30,9 @@ public class ProductService {
         productList = em.createNamedQuery("Product.findProductsByDate", Product.class)
                 .setParameter("date", date)
                 .getResultList();
+        for (Product e : productList) {
+            em.refresh(e);
+        }
         return productList;
     }
 
@@ -38,6 +42,7 @@ public class ProductService {
         product = em.createNamedQuery("Product.findProductByName", Product.class)
                 .setParameter("name", name)
                 .getResultList().get(0);
+        em.refresh(product);
         return product;
     }
 

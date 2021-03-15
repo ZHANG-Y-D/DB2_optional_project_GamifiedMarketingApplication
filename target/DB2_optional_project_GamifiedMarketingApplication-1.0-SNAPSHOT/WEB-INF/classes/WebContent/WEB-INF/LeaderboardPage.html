@@ -10,9 +10,25 @@
 
 <h1>Leader Board Today</h1>
 
-    <span th:each="u : ${userList}">
-        <td th:text="${u.getUsername()}"></td> 
-        <td th:text="${u.getPoint()}"></td> <br>
-    </span>
+<div align="right">
+    <a th:href = "@{/HomePage}" >Home Page</a> <br>
+</div>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>User</th>
+        <th>Point</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="u : ${userList}">
+        <td th:text="${u.getUsername()}"></td>
+        <td th:text="${u.getPoint()}"></td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>

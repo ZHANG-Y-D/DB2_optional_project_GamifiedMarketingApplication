@@ -71,7 +71,7 @@ public class AdminDeletionPage extends HttpServlet {
             questionnaireID = null;
         }
 
-        if (questionnaireID != null) {
+        if (questionnaireID != null && questionnaireID >= 0) {
             try {
                 qService.deleteQuestionnaire(questionnaireID);
             } catch (DeletionQuestionnaireException | OtherException e) {

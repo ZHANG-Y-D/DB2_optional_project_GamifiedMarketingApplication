@@ -4,6 +4,8 @@ import it.polimi.db2.GMA.entities.Administrator;
 import it.polimi.db2.GMA.entities.Questionnaire;
 import it.polimi.db2.GMA.entities.User;
 import it.polimi.db2.GMA.exceptions.CredentialsException;
+import it.polimi.db2.GMA.exceptions.ProductCreationException;
+import it.polimi.db2.GMA.exceptions.RegisterException;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -22,12 +24,36 @@ public class UserService {
 	public UserService() {
 	}
 
+	public void registerNewClient (String usrn, String pwd, String email) throws RegisterException {
+
+		User user = new User();
+
+		user.setUsername(usrn);
+		user.setPassword(pwd);
+		user.setEmail(email);
+		user.setBlocked(false);
+		user.setPoint(0);
+
+		try {
+			em.persist(user);
+			em.flush();
+		} catch (Exception e){
+			throw new RegisterException(e.getMessage());
+		}
+
+	}
+
+
+
 	public User checkCredentials(String usrn, String pwd) throws CredentialsException, NonUniqueResultException {
 		List<User> uList = null;
 		try {
-			uList = em.createNamedQuery("User.checkCredentials",
-					User.class).setParameter(1, usrn).setParameter(2, pwd)
+			uList = em.createNamedQuery("User.checkCredentials", User.class)
+					.setParameter(1, usrn).setParameter(2, pwd)
 					.getResultList();
+			for (User e : uList) {
+				em.refresh(e);
+			}
 		} catch (PersistenceException e) {
 			throw new CredentialsException("Could not verify credentials");
 		}
@@ -41,9 +67,12 @@ public class UserService {
 	public Administrator checkAdminCredentials(String usrn, String pwd) throws CredentialsException, NonUniqueResultException {
 		List<Administrator> adminList = null;
 		try {
-			adminList = em.createNamedQuery("Admin.checkCredentials",
-					Administrator.class).setParameter(1, usrn).setParameter(2, pwd)
+			adminList = em.createNamedQuery("Admin.checkCredentials", Administrator.class)
+					.setParameter(1, usrn).setParameter(2, pwd)
 					.getResultList();
+			for (Administrator e : adminList) {
+				em.refresh(e);
+			}
 		} catch (Exception e) {
 			throw new CredentialsException("Could not verify credentials");
 		}
@@ -59,7 +88,11 @@ public class UserService {
 		List<User> todayAnsweredUsers = new ArrayList<>();
 
 		try {
-			uList = em.createNamedQuery("User.findAllUsersDescByPoints",User.class).getResultList();
+			uList = em.createNamedQuery("User.findAllUsersDescByPoints",User.class)
+					.getResultList();
+			for (User e : uList) {
+				em.refresh(e);
+			}
 		} catch (PersistenceException e) {
 			throw new PersistenceException(e.getMessage());
 		}
@@ -80,7 +113,11 @@ public class UserService {
 		List<User> thisDayCancelledUsers = new ArrayList<>();
 
 		try {
-			uList = em.createNamedQuery("User.findAllUsersDescByPoints",User.class).getResultList();
+			uList = em.createNamedQuery("User.findAllUsersDescByPoints",User.class)
+					.getResultList();
+			for (User e : uList) {
+				em.refresh(e);
+			}
 		} catch (PersistenceException e) {
 			throw new PersistenceException(e.getMessage());
 		}

@@ -7,31 +7,54 @@
 	href="../CSS/mystyle.css" th:href="@{/css/mystyle.css}" />
 </head>
 <body>
-	<div align="right">
-		<p th:text="${'Username: ' + session.user.username}"></p>
-		<a th:href="@{/Logout}">Logout</a>
+
+<div align="right">
+	<p th:text="${'Username: ' + session.user.username}"></p>
+	<a th:href="@{/Logout}">Logout</a>
+</div>
+
+<h1>Welcome to the Gamified Marketing Application Home Page</h1>
+
+
+
+<span th:each="p : ${products}">
+	<td th:text="${p.getName()}"></td> <br>
+	<td th:text="${p.getDate()}"></td> <br>
+	<img width="100px" alt="photo" th:src="*{'data:image/png;base64,'+ p.getImageData()}"><br>
+	<span th:each="mq : ${p.getMarketingQuestionsList()}">
+		<br><td th:text="${mq.getQuestion()}"></td> <br>
+		<table>
+			<thead>
+			<tr>
+				<th>User</th>
+				<th>Answer</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr th:each="qa : ${mq.getQuestionnaireAnswerMap()}">
+				<td th:text="${qa.key.getUser().getUsername()}"></td>
+				<td th:text="${qa.value}"></td>
+			</tr>
+			</tbody>
+		</table>
+
+	</span>
+
+	<div th:if="${!p.getMarketingQuestionsList().isEmpty()}">
+		<a href="QuestionnaireMarketingSection.html"
+		   th:href = "@{/GoToQuestionnaireMarketingSection(productName=${p.getName()})}"
+		   th:text="${'Submit your Questionnaire For '+ p.getName()}"></a>
 	</div>
 
-	<h1>Welcome to the Gamified Marketing Application Home Page</h1>
+	<br>
+	<hr />
+	<br>
 
-		<span th:each="p : ${products}">
-				<td th:text="${p.getName()}"></td> <br>
-				<td th:text="${p.getDate()}"></td> <br>
-				<img width="100px" alt="photo" th:src="*{'data:image/png;base64,'+ p.getImageData()}"><br>
-				<span th:each="mq : ${p.getMarketingQuestionsList()}">
-					<td th:text="${mq.getQuestion()}"></td> <br>
-					<span th:each="qa : ${mq.getQuestionnaireAnswerMap()}">
-						<td th:text="${qa.key.getUser().getUsername()}"></td><br>
-						<td th:text="${qa.value}"></td><br>
-					</span>
-				</span>
+</span>
 
-				<div th:if="${!p.getMarketingQuestionsList().isEmpty()}">
-					<a href="QuestionnaireMarketingSection.html"
-					   th:href = "@{/GoToQuestionnaireMarketingSection(productName=${p.getName()})}"
-					   th:text="${'Submit your Questionnaire For '+ p.getName()}"></a>
-				</div>
-		</span>
+
+
+
 	<a th:href="@{/GoToLeaderboardPage}">Leaderboard</a>
 	<p th:text=" ${errorMsg}"></p>
 </body>

@@ -4,18 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Questionnaire Page</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../CSS/mystyle.css" th:href="@{/css/mystyle.css}" />
 </head>
 <body>
-    <td th:text="${product.getName()}"> </td>
-    <form action="#" th:action="@{/GoToQuestionnaireStatisticalSection}" method="POST">
-        <fieldset>
-            <span th:each="mq:${product.getMarketingQuestionsList()}">
-                <p>
-                    <input type="text" th:name="${mq.getId()}" th:text="${mq.getQuestion()}" required />
-                </p>
-            </span>
-            <input type="submit" value="Next">
-        </fieldset>
-    </form>
+
+<div align="right">
+    <a th:href = "@{/HomePage}" >Home Page</a> <br>
+</div>
+
+<td th:text="${product.getName()}"> </td>
+<form action="#" th:action="@{/GoToQuestionnaireStatisticalSection}" method="POST">
+    <fieldset>
+        <span th:each="mq:${product.getMarketingQuestionsList()}">
+            <p>
+                <span th:text="${mq.getQuestion()}"></span>
+                <input type="text" th:name="${mq.getId()}" required> <br>
+            </p>
+        </span>
+        <input type="submit" value="Next">
+    </fieldset>
+</form>
+
 </body>
 </html>

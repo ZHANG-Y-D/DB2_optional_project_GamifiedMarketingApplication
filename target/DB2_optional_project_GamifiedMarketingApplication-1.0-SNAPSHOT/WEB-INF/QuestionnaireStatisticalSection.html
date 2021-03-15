@@ -7,37 +7,42 @@
 </head>
 
 <body>
-    <td th:text="${product.getName()}"> </td>
-    <form action="#" th:action="@{/SubmitQuestionnaire}" method="POST">
-        <fieldset>
-            Age: <input type="number" name="Age" min=0> <br>
-            Sex: <select name="Sex" >
-                <option>I don't want to answer</option>
-                <option value="F">Female</option>
-                <option value="M">Male</option><br>
-            </select>
 
-            ExpertiseLevel: <select name="ExpertiseLevel" >
-                <option>I don't want to answer</option>
-                <option value="LOW">Low</option>
-                <option value="MEDIUM">Medium</option>
-                <option value="HIGH">High</option> </select><br>
-            </select>
+<div align="right">
+    <a th:href = "@{/HomePage}" >Home Page</a> <br>
+</div>
 
-            <input type="submit" value="Submit">
+<td th:text="${product.getName()}"> </td>
+<form action="#" th:action="@{/SubmitQuestionnaire}" method="POST">
+    <fieldset>
+        Age: <input type="number" name="Age" min=0> <br>
+        Sex: <select name="Sex" >
+            <option>I don't want to answer</option>
+            <option value="F">Female</option>
+            <option value="M">Male</option><br>
+        </select>
 
-        </fieldset>
+        ExpertiseLevel: <select name="ExpertiseLevel" >
+            <option>I don't want to answer</option>
+            <option value="LOW">Low</option>
+            <option value="MEDIUM">Medium</option>
+            <option value="HIGH">High</option> </select><br>
+        </select>
 
-    </form>
+        <input type="submit" value="Submit">
 
-    <div>
-        <a th:href = "@{/CancelQuestionnaire}"
-           th:text="Cancel"></a>
+    </fieldset>
 
-        <a href="QuestionnaireMarketingSection.html"
-           th:href = "@{/GoToQuestionnaireMarketingSection}"
-           th:text="Previous"></a>
-    </div>
+</form>
+
+<div>
+    <a th:href = "@{/CancelQuestionnaire}"
+       th:text="Cancel"></a>
+
+    <a href="QuestionnaireMarketingSection.html"
+       th:href = "@{/GoToQuestionnaireMarketingSection}"
+       th:text="Previous"></a>
+</div>
 
 
 </body>

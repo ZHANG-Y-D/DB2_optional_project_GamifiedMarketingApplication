@@ -1,19 +1,31 @@
 
-c
-java:S1192:"MDefine a constant instead of duplicating this literal "errorMessage" 3 times.(ŽÀ¶ç
 —
-java:S1186C"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
-U
-java:S1161":Add the "@Override" annotation above this method signature(¡’…ùüÿÿÿÿ
-P
-java:S1161(":Add the "@Override" annotation above this method signature(÷¤‹ú
-n
-java:S19890"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ÎæÎøþÿÿÿÿ
-W
-java:S10757"ARefactor your code to get this URI from a customizable parameter.(Ðæ²ã
-f
-java:S1989="PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›
-P
-java:S1161C":Add the "@Override" annotation above this method signature(‚“¶î
+java:S1186m"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
 m
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»
+java:S1989O"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8§¥åé€/
+m
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»
+c
+java:S1128"FRemove this unused import 'it.polimi.db2.GMA.services.ProductService'.(ñÓøÓ8â¸Ïè€/
+Y
+java:S1128"<Remove this unused import 'it.polimi.db2.GMA.entities.User'.(“ÁÓÌ8Ä¶üè€/
+u
+java:S19899"SHandle the following exception that could be thrown by "sendRedirect": IOException.(óÆÏÙýÿÿÿÿ8À¦¶è€/
+m
+java:S1989b"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8«ïé€/
+m
+java:S1989["PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8þêìé€/
+c
+java:S1075="ARefactor your code to get this URI from a customizable parameter.(òÀ­Êýÿÿÿÿ8®Éàé€/
+P
+java:S1161m":Add the "@Override" annotation above this method signature(‚“¶î
+U
+java:S1161(":Add the "@Override" annotation above this method signature(¡’…ùüÿÿÿÿ
+G
+java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8¡Žþè€/
+P
+java:S11611":Add the "@Override" annotation above this method signature(÷¤‹ú
+f
+java:S1989h"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›
+f
+java:S1192N"IDefine a constant instead of duplicating this literal "errorMsg" 4 times.(èÉŠ÷8þêìé€/

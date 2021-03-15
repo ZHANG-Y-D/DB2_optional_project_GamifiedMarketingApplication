@@ -1,12 +1,17 @@
 package it.polimi.db2.controllers;
 
+import it.polimi.db2.GMA.entities.User;
+import it.polimi.db2.GMA.exceptions.CredentialsException;
+import it.polimi.db2.GMA.exceptions.RegisterException;
 import it.polimi.db2.GMA.services.UserService;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.WebContext;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 import javax.ejb.EJB;
+import javax.persistence.NonUniqueResultException;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -41,12 +46,12 @@ public class Register extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// obtain and escape params
+			throws IOException {
 		String usrn = null;
 		String pwd = null;
 		String confirmpwd = null;
 		String email = null;
+		String errorMessage = null;
 		
 		usrn = StringEscapeUtils.escapeJava(request.getParameter("username"));
 		pwd = StringEscapeUtils.escapeJava(request.getParameter("pwd"));
@@ -55,18 +60,37 @@ public class Register extends HttpServlet {
 		
 		if (usrn == null || pwd == null || confirmpwd == null || email == null
 				|| usrn.isEmpty() || pwd.isEmpty() || confirmpwd.isEmpty() || email.isEmpty()) {
-			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-			response.getWriter().println("Credentials must be not null");
-			return;
+			errorMessage = "Credentials must be not null";
 		}
 		
 		if (!pwd.equals(confirmpwd)) {
-			response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
-			response.getWriter().println("Password and confirm password must be the same.");
-			return;
+			errorMessage = "Password and confirm password must be the same.";
+//			response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
+//			response.getWriter().println("Password and confirm password must be the same.");
+//			return;
 		}
-		
-		//TODO register
+
+
+		try {
+			usrService.registerNewClient(usrn, pwd, email);
+		} catch (RegisterException e) {
+			errorMessage = e.getMessage();
+//			e.printStackTrace();
+//			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
+//			return;
+		}
+
+		String path = null;
+		ServletContext servletContext = getServletContext();
+		final WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
+		if (errorMessage != null) {
+			ctx.setVariable("errorMsg", errorMessage);
+			path = "/Register.html";
+		} else {
+			ctx.setVariable("errorMsg", "Register successful!");
+			path = "/index.html";
+		}
+		templateEngine.process(path, ctx, response.getWriter());
 	}
 
 	public void destroy() {

@@ -3,6 +3,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login page</title>
+<link rel="stylesheet" type="text/css" media="all"
+	  href="../CSS/mystyle.css" th:href="@{/css/mystyle.css}" />
+
 </head>
 <body>
 	<h1>Welcome to the Gamified Marketing Application</h1>
@@ -14,6 +17,7 @@
 		<p th:text=" ${errorMsg}"></p>
 	</form>
 
+	<a href="Register.html">Client Register</a>
 	<a href="AdminLogin.html">Admin Login</a>
 
 </body>

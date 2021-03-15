@@ -30,7 +30,7 @@
     <tr th:each="q : ${questionnaireList}">
         <td th:text="${q.getUser().getUsername()}"></td>
         <td th:text="${q.getProduct().getName() }"></td>
-        <td th:text="${q.getDatetime() }"></td>
+        <td th:text="${#dates.format(q.getDatetime(), 'yyyy-MM-dd HH:mm:ss')}"></td>
         <td th:text="${q.getAge() }"></td>
         <td th:text="${q.getSex() }"></td>
         <td th:text="${q.getExpertiseLevel() }"></td>

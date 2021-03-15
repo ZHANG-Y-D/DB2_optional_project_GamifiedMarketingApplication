@@ -115,7 +115,11 @@ public class QuestionnaireService {
         List<Questionnaire> questionnaireList = null;
 
         try {
-            questionnaireList = em.createNamedQuery("Questionnaire.findAllQuestionnaireOrderByDatetime",Questionnaire.class).getResultList();
+            questionnaireList = em.createNamedQuery("Questionnaire.findAllQuestionnaireOrderByDatetime",Questionnaire.class)
+                    .getResultList();
+            for (Questionnaire e : questionnaireList) {
+                em.refresh(e);
+            }
         } catch (PersistenceException e) {
             throw new PersistenceException(e.getMessage());
         }

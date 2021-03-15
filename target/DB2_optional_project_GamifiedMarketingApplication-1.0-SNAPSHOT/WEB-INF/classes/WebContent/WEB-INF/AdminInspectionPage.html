@@ -19,37 +19,72 @@
     </fieldset>
 </form>
 
-<td>List of users who submitted the questionnaire:</td> <br>
-<span th:each="su : ${submittedUserList}">
-    <td th:text="${su.getUsername()}"></td> <br>
-</span>
+<br>
+<hr />
+<br>
+<div th:if="${submittedUserList.isEmpty()}">
+	<span>No user submitted!</span>
+</div>
+<div th:if="${!submittedUserList.isEmpty()}">
+	<td>List of users who submitted the questionnaire:</td> <br>
+	<span th:each="su : ${submittedUserList}">
+		<ul>
+			<li th:text="${su.getUsername()}"></li>
+		</ul>
+	</span>
+</div>
+
+<hr />
 
 <td>List of users who cancelled the questionnaire:</td> <br>
-<span th:each="cu : ${cancelledUserList}">
-    <td th:text="${cu.getUsername()}"></td> <br>
-</span>
+
+<div th:if="${cancelledUserList.isEmpty()}">
+	<span>No user cancelled!</span>
+</div>
+
+<div th:if="${!cancelledUserList.isEmpty()}">
+	<span th:each="cu : ${cancelledUserList}">
+		<ul>
+			<li th:text="${cu.getUsername()}"></li>
+		</ul>
+	</span>
+</div>
 
 
+<hr />
 
 <td >Questionnaire answers of each user:</td><br>
-<span th:each="su : ${submittedUserList}">
-	<td th:text="${su.getUsername()}"></td> <br>
-	<span th:each="uq : ${su.getQuestionnaires()}">
 
-	<div th:if="${(#dates.format(uq.getDatetime(), 'dd-MMM-yyyy') == #dates.format(date, 'dd-MMM-yyyy'))
-					&& !uq.getQuestionAnswerMap().isEmpty()}">
-		<td th:text="${uq.getProduct().getName()}"></td> <br>
-		<span th:each="qa : ${uq.getQuestionAnswerMap()}">
-			<td th:text="${qa.key.getQuestion()}"></td><br>
-			<td th:text="${qa.value}"></td><br>
-		</span>
-	</div>
+<div th:if="${submittedUserList.isEmpty()}">
+	<span>No user submitted!</span>
+</div>
 
+<div th:if="${!submittedUserList.isEmpty()}">
+	<span th:each="su : ${submittedUserList}">
+		<ul>
+			<li th:text="${su.getUsername()}"></li> <br>
+
+			<span th:each="uq : ${su.getQuestionnaires()}">
+				<div th:if="${(#dates.format(uq.getDatetime(), 'dd-MMM-yyyy') == #dates.format(date, 'dd-MMM-yyyy'))
+								&& !uq.getQuestionAnswerMap().isEmpty()}">
+					<ul style="list-style-type:square">
+						<li th:text="${uq.getProduct().getName()}"> </li>
+							<span th:each="qa : ${uq.getQuestionAnswerMap()}">
+								<td th:text="${qa.key.getQuestion()}"></td>
+								<span>  ->  </span>
+								<td th:text="${qa.value}"></td><br>
+							</span>
+
+					</ul>
+
+				</div>
+			</span>
+		</ul>
 	</span>
-</span>
+</div>
 
 
-
+<hr />
 
 <p th:text=" ${errorMsg}"></p>
 

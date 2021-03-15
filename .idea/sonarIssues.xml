@@ -183,6 +183,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/RegisterException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/services/JPATxUtils.java">
           <value>
             <set />
@@ -248,6 +253,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/LeaderboardPage.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/QuestionnaireMarketingSection.html">
           <value>
             <set />
@@ -264,6 +274,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/WEB-INF/QuestionnaireStatisticalSection.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingWeb/WebContent/css/mystyle.css">
           <value>
             <set />
           </value>

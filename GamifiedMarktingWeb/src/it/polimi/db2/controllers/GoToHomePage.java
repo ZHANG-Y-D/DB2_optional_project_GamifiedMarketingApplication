@@ -47,9 +47,6 @@ public class GoToHomePage extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
-
-        //TODO refresh problem
-
         // If admin user is not logged in (not present in session) redirect to the login
         String pathContext = getServletContext().getContextPath();
         HttpSession session = request.getSession();

@@ -1,22 +1,22 @@
 
-n
-java:S1989U"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ÛÑé§þÿÿÿÿ
-—
-java:S1186Z"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
-P
-java:S1161Z":Add the "@Override" annotation above this method signature(‚“¶î
-f
-java:S1989Q"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›
+U
+java:S1161-":Add the "@Override" annotation above this method signature(þ³‚”ûÿÿÿÿ
 m
 java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»
-f
-java:S1989;"PHandle the following exception that could be thrown by "sendError": IOException.(ÚÿéÇ
-f
-java:S1989D"PHandle the following exception that could be thrown by "sendError": IOException.(Þ´Å»
+—
+java:S1186Z"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
 W
 java:S1075P"ARefactor your code to get this URI from a customizable parameter.(Œý«ñ
 [	java:S1126"FDefine and throw a dedicated exception instead of using a generic one.(üæÂã
 U
-java:S1161-":Add the "@Override" annotation above this method signature(þ³‚”ûÿÿÿÿ
-U
 java:S1161$":Add the "@Override" annotation above this method signature(¡’…ùüÿÿÿÿ
+f
+java:S1989D"PHandle the following exception that could be thrown by "sendError": IOException.(Þ´Å»
+P
+java:S1161Z":Add the "@Override" annotation above this method signature(‚“¶î
+n
+java:S1989U"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ÛÑé§þÿÿÿÿ
+f
+java:S1989;"PHandle the following exception that could be thrown by "sendError": IOException.(ÚÿéÇ
+f
+java:S1989Q"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›

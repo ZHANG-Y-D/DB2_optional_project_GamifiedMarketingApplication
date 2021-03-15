@@ -13,7 +13,8 @@
         Image: <input type="file" name="image" required> <br>
 
         <th:block th:each="i: ${#numbers.sequence(1, count)}">
-            <input type="text" th:name="${'question'+ i}" th:text="${'Question'+ i}" required /><br>
+            <span th:text="${'Question '+ i +': '}"></span>
+            <input type="text" th:name="${'question'+ i}"  required /><br>
         </th:block>
 
         <a th:href = "@{/AdminCreateProductPage(count=${count})}" >Add A Question</a> <br>

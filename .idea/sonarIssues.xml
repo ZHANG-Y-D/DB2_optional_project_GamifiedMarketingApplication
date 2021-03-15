@@ -123,6 +123,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/Administrator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/entities/Expense.java">
           <value>
             <set />

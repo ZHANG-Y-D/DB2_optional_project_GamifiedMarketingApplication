@@ -104,6 +104,7 @@ public class QuestionnaireService {
         }
 
         user = em.find(User.class,user.getId());
+        em.refresh(user);
         if (user.getBlocked() == TRUE){
             throw new AccountBlockedException("Your submitted answer contain offensive words, " +
                     "your account is blocked");

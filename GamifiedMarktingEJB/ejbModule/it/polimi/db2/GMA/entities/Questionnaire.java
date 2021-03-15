@@ -8,7 +8,7 @@ import java.util.Map;
 
 @Entity
 @Table(name = "Questionnaire", schema = "db_gamified_marketing_application")
-@NamedQuery(name = "Questionnaire.findAllQuestionnaireOrderByDatetime", query = "SELECT q FROM Questionnaire q order by q.Datetime ASC ")
+@NamedQuery(name = "Questionnaire.findAllQuestionnaireOrderByDatetime", query = "SELECT q FROM Questionnaire q order by q.datetime ASC ")
 
 
 public class Questionnaire implements Serializable {
@@ -19,22 +19,22 @@ public class Questionnaire implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private Timestamp Datetime;
+    private Timestamp datetime;
 
-    private Integer Age;
+    private Integer age;
 
-    private String Sex;
+    private String sex;
 
-    private String ExpertiseLevel;
+    private String expertiseLevel;
 
 
     @ManyToOne
     @JoinColumn(name = "Product")
-    private Product Product;
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name = "User")
-    private User User;
+    private User user;
 
 
     @ElementCollection
@@ -56,51 +56,51 @@ public class Questionnaire implements Serializable {
     }
 
     public Timestamp getDatetime() {
-        return Datetime;
+        return datetime;
     }
 
     public void setDatetime(Timestamp datetime) {
-        Datetime = datetime;
+        this.datetime = datetime;
     }
 
     public Integer getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(Integer age) {
-        Age = age;
+        this.age = age;
     }
 
     public String getSex() {
-        return Sex;
+        return sex;
     }
 
     public void setSex(String sex) {
-        Sex = sex;
+        this.sex = sex;
     }
 
     public String getExpertiseLevel() {
-        return ExpertiseLevel;
+        return expertiseLevel;
     }
 
     public void setExpertiseLevel(String expertiseLevel) {
-        ExpertiseLevel = expertiseLevel;
+        this.expertiseLevel = expertiseLevel;
     }
 
     public Product getProduct() {
-        return Product;
+        return product;
     }
 
     public void setProduct(Product product) {
-        Product = product;
+        this.product = product;
     }
 
     public User getUser() {
-        return User;
+        return user;
     }
 
     public void setUser(User user) {
-        User = user;
+        this.user = user;
     }
 
     public Map<MarketingQuestion, String> getQuestionAnswerMap() {

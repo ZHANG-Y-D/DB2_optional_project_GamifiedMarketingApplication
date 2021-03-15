@@ -26,11 +26,11 @@ public class User implements Serializable {
 
 	private Integer point;
 
-	private Boolean IsBlocked;
+	private Boolean isBlocked;
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "User")
-	@OrderBy("Datetime ASC")
-	List<Questionnaire> questionnaires;
+	@OrderBy("datetime ASC")
+	private List<Questionnaire> questionnaires;
 
 	public User() {
 	}
@@ -74,11 +74,11 @@ public class User implements Serializable {
 	}
 
 	public Boolean getBlocked() {
-		return IsBlocked;
+		return isBlocked;
 	}
 
 	public void setBlocked(Boolean blocked) {
-		IsBlocked = blocked;
+		isBlocked = blocked;
 	}
 
 	public List<Questionnaire> getQuestionnaires() {

@@ -10,8 +10,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "Product", schema = "db_gamified_marketing_application")
-@NamedQuery(name = "Product.findProductsByDate", query = "SELECT p FROM Product p where p.Date = :date")
-@NamedQuery(name = "Product.findProductByName", query = "SELECT p FROM Product p where p.Name = :name")
+@NamedQuery(name = "Product.findProductsByDate", query = "SELECT p FROM Product p where p.date = :date")
+@NamedQuery(name = "Product.findProductByName", query = "SELECT p FROM Product p where p.name = :name")
 
 
 public class Product implements Serializable {
@@ -21,18 +21,18 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String Name;
+    private String name;
 
-    private Date Date;
+    private Date date;
 
     @Lob
-    private byte[] Image;
+    private byte[] image;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "Product")
-    List<Questionnaire> questionnaires;
+    private List<Questionnaire> questionnaires;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "Product")
-    List<MarketingQuestion> marketingQuestionsList;
+    private List<MarketingQuestion> marketingQuestionsList;
 
     public Product(){
 
@@ -56,31 +56,31 @@ public class Product implements Serializable {
     }
 
     public String getName() {
-        return this.Name;
+        return this.name;
     }
 
     public void setName(String name) {
-        this.Name = name;
+        this.name = name;
     }
 
     public Date getDate() {
-        return this.Date;
+        return this.date;
     }
 
     public void setDate(Date date) {
-        this.Date = date;
+        this.date = date;
     }
 
     public byte[] getImage() {
-        return Image;
+        return image;
     }
 
     public String getImageData() {
-        return Base64.getMimeEncoder().encodeToString(Image);
+        return Base64.getMimeEncoder().encodeToString(image);
     }
 
     public void setImage(byte[] image) {
-        Image = image;
+        this.image = image;
     }
 
     public List<MarketingQuestion> getMarketingQuestionsList() {

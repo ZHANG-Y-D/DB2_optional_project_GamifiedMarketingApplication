@@ -15,11 +15,11 @@ public class MarketingQuestion implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String Question;
+    private String question;
 
     @ManyToOne
     @JoinColumn(name = "Product")
-    private Product Product;
+    private Product product;
 
     @ElementCollection
     @CollectionTable(name = "ContainMarketing",joinColumns = @JoinColumn(name = "IDQuestion"),foreignKey = @ForeignKey(name = "IDProduct"))
@@ -34,11 +34,11 @@ public class MarketingQuestion implements Serializable {
     }
 
     public String getQuestion() {
-        return Question;
+        return question;
     }
 
     public void setQuestion(String question) {
-        Question = question;
+        this.question = question;
     }
 
     public int getId() {
@@ -58,10 +58,10 @@ public class MarketingQuestion implements Serializable {
     }
 
     public Product getProduct() {
-        return Product;
+        return product;
     }
 
     public void setProduct(Product product) {
-        Product = product;
+        this.product = product;
     }
 }

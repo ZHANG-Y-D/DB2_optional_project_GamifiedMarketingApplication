@@ -2,11 +2,10 @@ package it.polimi.db2.GMA.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name = "Administrator", schema = "db_gamified_marketing_application")
-@NamedQuery(name = "Admin.checkCredentials", query = "SELECT r FROM Administrator r  WHERE r.Name = ?1 and r.Password = ?2")
+@NamedQuery(name = "Admin.checkCredentials", query = "SELECT r FROM Administrator r  WHERE r.name = ?1 and r.password = ?2")
 
 
 public class Administrator implements Serializable {
@@ -16,9 +15,9 @@ public class Administrator implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String Name;
+    private String name;
 
-    private String Password;
+    private String password;
 
     public Administrator() {
     }
@@ -32,18 +31,18 @@ public class Administrator implements Serializable {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 }

@@ -148,7 +148,16 @@ public class AdminCreateProductPage extends HttpServlet {
         try {
             pService.createAProduct(name,date,bytesImage,questionList);
         }catch (ProductCreationException e){
-            request.getSession().setAttribute("errorMessage", e.getMessage());
+            String errorMessage = null;
+            if (e.getMessage().contains("You can only inserting")){
+                errorMessage = "You can only inserting the product for the current date or for a posterior date";
+            } else if (e.getMessage().contains("Duplicate")){
+                errorMessage = "This product name is duplicate, please choose another one.";
+            } else {
+                errorMessage = e.getMessage();
+            }
+
+            request.getSession().setAttribute("errorMessage", errorMessage);
             response.sendRedirect(pathContext + "/AdminCreateProductPage");
             return;
         }

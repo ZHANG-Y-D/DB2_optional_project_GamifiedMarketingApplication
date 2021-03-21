@@ -1,7 +1,5 @@
 package it.polimi.db2.controllers;
 
-import it.polimi.db2.GMA.entities.User;
-import it.polimi.db2.GMA.exceptions.CredentialsException;
 import it.polimi.db2.GMA.exceptions.RegisterException;
 import it.polimi.db2.GMA.services.UserService;
 import org.apache.commons.lang.StringEscapeUtils;
@@ -11,7 +9,6 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 import javax.ejb.EJB;
-import javax.persistence.NonUniqueResultException;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -65,19 +62,18 @@ public class Register extends HttpServlet {
 		
 		if (!pwd.equals(confirmpwd)) {
 			errorMessage = "Password and confirm password must be the same.";
-//			response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
-//			response.getWriter().println("Password and confirm password must be the same.");
-//			return;
 		}
-
 
 		try {
 			usrService.registerNewClient(usrn, pwd, email);
 		} catch (RegisterException e) {
-			errorMessage = e.getMessage();
-//			e.printStackTrace();
-//			response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
-//			return;
+			if (e.getMessage().contains("mailcheck")){
+				errorMessage = "Please submit a right format E-Mail";
+			}else if (e.getMessage().contains("Duplicate")){
+				errorMessage = "Your username is registered, please choose another one.";
+			}else {
+				errorMessage = e.getMessage();
+			}
 		}
 
 		String path = null;

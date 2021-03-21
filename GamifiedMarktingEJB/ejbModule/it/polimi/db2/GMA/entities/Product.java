@@ -13,7 +13,6 @@ import java.util.List;
 @NamedQuery(name = "Product.findProductsByDate", query = "SELECT p FROM Product p where p.date = :date")
 @NamedQuery(name = "Product.findProductByName", query = "SELECT p FROM Product p where p.name = :name")
 
-
 public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -28,10 +27,10 @@ public class Product implements Serializable {
     @Lob
     private byte[] image;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "Product")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "Product")
     private List<Questionnaire> questionnaires;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "Product")
+    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.REFRESH}, mappedBy = "Product")
     private List<MarketingQuestion> marketingQuestionsList;
 
     public Product(){

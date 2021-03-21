@@ -4,9 +4,11 @@ import it.polimi.db2.GMA.entities.MarketingQuestion;
 import it.polimi.db2.GMA.entities.Product;
 import it.polimi.db2.GMA.entities.User;
 import it.polimi.db2.GMA.exceptions.AccountBlockedException;
+import it.polimi.db2.GMA.exceptions.ContainOffensiveWordsException;
 import it.polimi.db2.GMA.exceptions.OtherException;
 import it.polimi.db2.GMA.exceptions.QuestionnaireDoubleAnswerException;
 import it.polimi.db2.GMA.services.QuestionnaireService;
+import it.polimi.db2.GMA.services.UserService;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templatemode.TemplateMode;
@@ -32,11 +34,14 @@ public class SubmitQuestionnaire extends HttpServlet {
     private TemplateEngine templateEngine;
     @EJB(name = "it.polimi.db2.GMA.services/QuestionnaireService")
     private QuestionnaireService qService;
+    @EJB(name = "it.polimi.db2.GMA.services/UserService")
+    private UserService usrService;
 
     public SubmitQuestionnaire() {
         super();
     }
 
+    @Override
     public void init() throws ServletException {
         ServletContext servletContext = getServletContext();
         ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(servletContext);
@@ -46,6 +51,7 @@ public class SubmitQuestionnaire extends HttpServlet {
         templateResolver.setSuffix(".html");
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -97,14 +103,15 @@ public class SubmitQuestionnaire extends HttpServlet {
             request.getSession().setAttribute("errorMessage", e.getMessage());
             response.sendRedirect(pathContext + "/HomePage");
             return;
+        } catch (ContainOffensiveWordsException e){
+            usrService.toBlockAccount(user.getId());
+            request.getSession().setAttribute("errorMessage", e.getMessage());
+            response.sendRedirect(pathContext + "/HomePage");
+            return;
         }
-
 
         request.getSession().setAttribute("errorMessage",
                 "Your questionnaire was successfully submitted");
         response.sendRedirect(pathContext + "/HomePage");
     }
-
-
-
 }

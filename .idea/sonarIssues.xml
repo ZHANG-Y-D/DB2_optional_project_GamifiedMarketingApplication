@@ -173,6 +173,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/ContainOffensiveWordsException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/CpntainOffensiveWordsException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/DeletionQuestionnaireException.java">
           <value>
             <set />

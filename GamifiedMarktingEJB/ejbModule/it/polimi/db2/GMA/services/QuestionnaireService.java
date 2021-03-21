@@ -4,10 +4,7 @@ import it.polimi.db2.GMA.entities.MarketingQuestion;
 import it.polimi.db2.GMA.entities.Product;
 import it.polimi.db2.GMA.entities.Questionnaire;
 import it.polimi.db2.GMA.entities.User;
-import it.polimi.db2.GMA.exceptions.AccountBlockedException;
-import it.polimi.db2.GMA.exceptions.DeletionQuestionnaireException;
-import it.polimi.db2.GMA.exceptions.OtherException;
-import it.polimi.db2.GMA.exceptions.QuestionnaireDoubleAnswerException;
+import it.polimi.db2.GMA.exceptions.*;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -60,7 +57,7 @@ public class QuestionnaireService {
     public void submitAQuestionnaire(Product product, User user,
                                      Integer age, String sex, String expertiseLevel,
                                      Map<MarketingQuestion,String> questionAnswerMap)
-            throws QuestionnaireDoubleAnswerException, AccountBlockedException, PersistenceException, OtherException {
+            throws QuestionnaireDoubleAnswerException, AccountBlockedException, PersistenceException, OtherException, ContainOffensiveWordsException {
 
 
         long now = System.currentTimeMillis();
@@ -86,9 +83,7 @@ public class QuestionnaireService {
         questionnaire.setAge(age);
         questionnaire.setSex(sex);
         questionnaire.setExpertiseLevel(expertiseLevel);
-
         questionnaire.setQuestionAnswerMap(questionAnswerMap);
-
 
         try {
             em.persist(questionnaire);
@@ -98,16 +93,13 @@ public class QuestionnaireService {
                 throw new AccountBlockedException("Your account is already blocked");
             }else if((e.getMessage().contains("Duplicate"))) {
                 throw new QuestionnaireDoubleAnswerException("You have already answered/canceled for this questionnaire");
-            } else {
+            } else if(e.getMessage().contains("Your submitted answer contain offensive words")){
+                throw new ContainOffensiveWordsException("Your submitted answer contain offensive words, " +
+                            "your account is blocked");
+            }
+            else {
                 throw new OtherException(e.getMessage());
             }
-        }
-
-        user = em.find(User.class,user.getId());
-        em.refresh(user);
-        if (user.getBlocked() == TRUE){
-            throw new AccountBlockedException("Your submitted answer contain offensive words, " +
-                    "your account is blocked");
         }
     }
 

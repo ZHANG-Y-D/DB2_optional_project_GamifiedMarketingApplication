@@ -92,7 +92,6 @@ public class AdminDeletionPage extends HttpServlet {
             return;
         }
 
-
         if (questionnaireList.isEmpty()){
             ctx.setVariable("errorMsg", "No questionnaire yet");
             templateEngine.process(path, ctx, response.getWriter());

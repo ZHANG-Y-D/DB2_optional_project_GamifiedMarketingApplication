@@ -4,7 +4,6 @@ import it.polimi.db2.GMA.entities.Administrator;
 import it.polimi.db2.GMA.entities.Questionnaire;
 import it.polimi.db2.GMA.entities.User;
 import it.polimi.db2.GMA.exceptions.CredentialsException;
-import it.polimi.db2.GMA.exceptions.ProductCreationException;
 import it.polimi.db2.GMA.exceptions.RegisterException;
 
 import javax.ejb.Stateless;
@@ -131,6 +130,13 @@ public class UserService {
 			}
 		}
 		return thisDayCancelledUsers;
+	}
+
+	public void toBlockAccount(int userID){
+
+		User user = em.find(User.class,userID);
+		user.setBlocked(true);
+		em.flush();
 	}
 
 }

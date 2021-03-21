@@ -1,25 +1,23 @@
 
-o
-java:S1192?"MDefine a constant instead of duplicating this literal "errorMessage" 4 times.(âÑÔêÿÿÿÿÿ8©æğÁş.
+u
+java:S1989@"SHandle the following exception that could be thrown by "sendRedirect": IOException.(¤¢µøøÿÿÿÿ8©æğÁş.
 t
-java:S2226 "XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»8ˆ²¬Âş.
+java:S2226""XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»8ˆ²¬Âş.
 o
-java:S1989b"SHandle the following exception that could be thrown by "sendRedirect": IOException.(°ÅÄ!8©æğÁş.
-o
-java:S1989i"SHandle the following exception that could be thrown by "sendRedirect": IOException.(°ÅÄ!8©æğÁş.
-\
-java:S11611":Add the "@Override" annotation above this method signature(ş³‚”ûÿÿÿÿ8Õà‹•ú.
-o
-java:S1989@"SHandle the following exception that could be thrown by "sendRedirect": IOException.(°ÅÄ!8©æğÁş.
+java:S1989L"SHandle the following exception that could be thrown by "sendRedirect": IOException.(°ÅÄ!8©æğÁş.
+f
+java:S1192F"JDefine a constant instead of duplicating this literal "/HomePage" 5 times.(°ÅÄ!8©æğÁş.
 y
-java:S1450 "]Remove the "templateEngine" field and declare it as a local variable in the relevant methods.(‚º»8ˆ²¬Âş.
+java:S1450""]Remove the "templateEngine" field and declare it as a local variable in the relevant methods.(‚º»8ˆ²¬Âş.
+o
+java:S1192E"MDefine a constant instead of duplicating this literal "errorMessage" 5 times.(âÑÔêÿÿÿÿÿ8©æğÁş.
 o
 java:S1989F"SHandle the following exception that could be thrown by "sendRedirect": IOException.(°ÅÄ!8©æğÁş.
+o
+java:S1989m"SHandle the following exception that could be thrown by "sendRedirect": IOException.(°ÅÄ!8òï……/
 `
-java:S1128"CRemove this unused import 'javax.persistence.PersistenceException'.(µ¨¨8ƒ…©ğ€/
-\
-java:S1161(":Add the "@Override" annotation above this method signature(¡’…ùüÿÿÿÿ8Ù—ƒ•ú.
-u
-java:S1989:"SHandle the following exception that could be thrown by "sendRedirect": IOException.(¤¢µøøÿÿÿÿ8©æğÁş.
-f
-java:S1192@"JDefine a constant instead of duplicating this literal "/HomePage" 4 times.(°ÅÄ!8©æğÁş.
+java:S1128"CRemove this unused import 'javax.persistence.PersistenceException'.(µ¨¨8ƒ…©ğ€/
+o
+java:S1989h"SHandle the following exception that could be thrown by "sendRedirect": IOException.(°ÅÄ!8©æğÁş.
+o
+java:S1989s"SHandle the following exception that could be thrown by "sendRedirect": IOException.(°ÅÄ!8©æğÁş.

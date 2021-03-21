@@ -37,7 +37,7 @@ public class Questionnaire implements Serializable {
     private User user;
 
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "ContainMarketing",joinColumns = @JoinColumn(name = "IDQues"))
     @MapKeyJoinColumn(name = "IDQuestion")
     @MapKeyJoinColumn(name = "IDProduct",referencedColumnName = "Product")

@@ -1,10 +1,4 @@
 
-t	java:S116"SRename this field "Datetime" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ğ²Îøÿÿÿÿ8èø´ú.
 £
 java:S11860"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(’˜¿Éøÿÿÿÿ8û‘¦ş.
-n	java:S116!"RRename this field "Product" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øŸîŸ8ıé“ú.
-p	java:S116%"ORename this field "User" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ”´¸ÿÿÿÿÿ8ıé“ú.
-u	java:S116"YRename this field "ExpertiseLevel" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£÷ñ»8éø´ú.
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ù¶½Œøÿÿÿÿ
-j	java:S116"NRename this field "Sex" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±Æ±Ì8éø´ú.
-o	java:S116"NRename this field "Age" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛĞ·ñûÿÿÿÿ8èø´ú.

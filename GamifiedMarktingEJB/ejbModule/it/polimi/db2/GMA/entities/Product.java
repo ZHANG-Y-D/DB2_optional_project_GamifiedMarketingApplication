@@ -28,7 +28,7 @@ public class Product implements Serializable {
     @Lob
     private byte[] image;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "Product")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "Product")
     private List<Questionnaire> questionnaires;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "Product")

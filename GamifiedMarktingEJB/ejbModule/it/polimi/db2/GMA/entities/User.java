@@ -10,7 +10,6 @@ import java.util.List;
 @NamedQuery(name = "User.checkCredentials", query = "SELECT r FROM User r  WHERE r.username = ?1 and r.password = ?2")
 @NamedQuery(name = "User.findAllUsersDescByPoints", query = "SELECT u FROM User u order by u.point DESC ")
 
-
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 

@@ -100,3 +100,5 @@ o
 ?GamifiedMarktingWeb/src/it/polimi/db2/controllers/Register.java,b/0/b00d7654a32b8f2a55f50d3c259084ba31d3890d
 Å
 QGamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/RegisterException.java,1/e/1e4cf85465bad87c150bd09df1f7c6f0d91c2571
+é
+^GamifiedMarktingEJB/ejbModule/it/polimi/db2/GMA/exceptions/ContainOffensiveWordsException.java,b/6/b628e548c7bdfd7d054c92322b63d3382be566b0

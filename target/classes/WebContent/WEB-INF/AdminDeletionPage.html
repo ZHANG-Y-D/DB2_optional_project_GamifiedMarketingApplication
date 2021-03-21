@@ -34,7 +34,10 @@
         <td th:text="${q.getAge() }"></td>
         <td th:text="${q.getSex() }"></td>
         <td th:text="${q.getExpertiseLevel() }"></td>
-        <td><a th:href="@{/AdminDeletionPage(questionnaireID=${q.getId()})}">Delete</a></td>
+        <div th:if="${#dates.format(q.getDatetime(), 'dd-MMM-yyyy') != #dates.format(#dates.createNow(), 'dd-MMM-yyyy')}">
+            <td><a th:href="@{/AdminDeletionPage(questionnaireID=${q.getId()})}">Delete</a></td>
+        </div>
+
     </tr>
     </tbody>
 </table>

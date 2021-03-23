@@ -22,7 +22,7 @@
 <br>
 <hr />
 <br>
-<div th:if="${submittedUserList.isEmpty()}">
+<div th:if="${submittedUserList == null || submittedUserList.isEmpty()}">
 	<span>No user submitted!</span>
 </div>
 <div th:if="${!submittedUserList.isEmpty()}">
@@ -38,7 +38,7 @@
 
 <td>List of users who cancelled the questionnaire:</td> <br>
 
-<div th:if="${cancelledUserList.isEmpty()}">
+<div th:if="${cancelledUserList == null || cancelledUserList.isEmpty()}">
 	<span>No user cancelled!</span>
 </div>
 
@@ -55,7 +55,7 @@
 
 <td >Questionnaire answers of each user:</td><br>
 
-<div th:if="${submittedUserList.isEmpty()}">
+<div th:if="${submittedUserList == null || submittedUserList.isEmpty()}">
 	<span>No user submitted!</span>
 </div>
 

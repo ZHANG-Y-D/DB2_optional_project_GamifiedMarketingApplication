@@ -1,40 +1,40 @@
 
-m
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»
-a
-java:S1128"?Remove this unused import 'it.polimi.db2.GMA.entities.Product'.(ÌÙ•¥şÿÿÿÿ8†öÆÍş.
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¨²Ãş.
-Ÿ
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8ßß²Ãş.
-u
-java:S1989>"SHandle the following exception that could be thrown by "sendRedirect": IOException.(óÆÏÙıÿÿÿÿ8£­¸Ãş.
-p
-java:S1989^"SHandle the following exception that could be thrown by "sendRedirect": IOException.(‚¢ù8ìˆôÆş.
-o
-java:S1192c"RDefine a constant instead of duplicating this literal "submittedUserList" 4 times.(ÑĞÜŒ8®ßãÈş.
-j
-java:S1192W"MDefine a constant instead of duplicating this literal "errorMessage" 5 times.(é¦ËÙ8—ôÄÃş.
-b	java:S112J"FDefine and throw a dedicated exception instead of using a generic one.(±‰¾8ßß²Ãş.
 u
 java:S1989t"SHandle the following exception that could be thrown by "sendRedirect": IOException.(óÆÏÙıÿÿÿÿ8óĞÇÃş.
-p
-java:S1989X"SHandle the following exception that could be thrown by "sendRedirect": IOException.(‚¢ù8ßß²Ãş.
-c
-java:S1075y"ARefactor your code to get this URI from a customizable parameter.(ì¨Öåÿÿÿÿÿ8—ôÄÃş.
+m
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»
 o
-java:S1192d"RDefine a constant instead of duplicating this literal "cancelledUserList" 4 times.(ôÃåå8Ğ×äÈş.
-r
-java:S1192X"UDefine a constant instead of duplicating this literal "/AdminInspectionPage" 3 times.(‚¢ù8£¤öÆş.
-R
-java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8²Ù¯Íş.
-t
-java:S1128"RRemove this unused import 'it.polimi.db2.GMA.exceptions.ProductCreationException'.(®¡ÑÓıÿÿÿÿ8˜ñ¹Ãş.
+java:S1192c"RDefine a constant instead of duplicating this literal "submittedUserList" 4 times.(ÑĞÜŒ8®ßãÈş.
 M
 java:S1128"0Remove this unused import 'java.io.InputStream'.(¹»º8¨²Ãş.
 m
 java:S1989N"PHandle the following exception that could be thrown by "sendError": IOException.(Øß²¯8ßß²Ãş.
+Ÿ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8ßß²Ãş.
+R
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8²Ù¯Íş.
+b	java:S112J"FDefine and throw a dedicated exception instead of using a generic one.(±‰¾8ßß²Ãş.
+p
+java:S1989X"SHandle the following exception that could be thrown by "sendRedirect": IOException.(‚¢ù8ßß²Ãş.
 p
 java:S1989f"SHandle the following exception that could be thrown by "sendRedirect": IOException.(‚¢ù8ßß²Ãş.
 n
 java:S1989Š"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8ÅøÆÃş.
+r
+java:S1192X"UDefine a constant instead of duplicating this literal "/AdminInspectionPage" 3 times.(‚¢ù8£¤öÆş.
+t
+java:S1128"RRemove this unused import 'it.polimi.db2.GMA.exceptions.ProductCreationException'.(®¡ÑÓıÿÿÿÿ8˜ñ¹Ãş.
+u
+java:S1989>"SHandle the following exception that could be thrown by "sendRedirect": IOException.(óÆÏÙıÿÿÿÿ8£­¸Ãş.
+c
+java:S1075y"ARefactor your code to get this URI from a customizable parameter.(ì¨Öåÿÿÿÿÿ8—ôÄÃş.
+j
+java:S1192W"MDefine a constant instead of duplicating this literal "errorMessage" 5 times.(é¦ËÙ8—ôÄÃş.
+o
+java:S1192d"RDefine a constant instead of duplicating this literal "cancelledUserList" 4 times.(ôÃåå8Ğ×äÈş.
+a
+java:S1128"?Remove this unused import 'it.polimi.db2.GMA.entities.Product'.(ÌÙ•¥şÿÿÿÿ8†öÆÍş.
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¨²Ãş.
+p
+java:S1989^"SHandle the following exception that could be thrown by "sendRedirect": IOException.(‚¢ù8ìˆôÆş.

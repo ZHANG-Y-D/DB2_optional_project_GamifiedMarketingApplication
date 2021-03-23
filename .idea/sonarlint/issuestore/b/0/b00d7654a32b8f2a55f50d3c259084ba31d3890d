@@ -1,21 +1,15 @@
 
-m
-java:S1989]"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8±çÆƒ/
+c
+java:S1075T"ARefactor your code to get this URI from a customizable parameter.(·¸óßúÿÿÿÿ8øÎ²ƒ/
 t
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»8›÷Ñò€/
-c
-java:S2259B"AA "NullPointerException" could be thrown; "pwd" is nullable here.(îÅñûıÿÿÿÿ8×¸ƒ/
-Y
-java:S1128"<Remove this unused import 'it.polimi.db2.GMA.entities.User'.(“ÁÓÌ8õŸƒ/
-P
-java:S1161`":Add the "@Override" annotation above this method signature(‚“¶î
-i
-java:S1128"GRemove this unused import 'javax.persistence.NonUniqueResultException'.(ï¬Áğùÿÿÿÿ8Áõ¡ƒ/
-
-java:S1186`"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8°ìÒò€/
-p
-java:S1128"NRemove this unused import 'it.polimi.db2.GMA.exceptions.CredentialsException'.(äàÊüÿÿÿÿ8Áõ¡ƒ/
-c
-java:S1075X"ARefactor your code to get this URI from a customizable parameter.(·¸óßúÿÿÿÿ8øÎ²ƒ/
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»8›÷Ñò€/
 ^
-java:S1075["ARefactor your code to get this URI from a customizable parameter.(Œı«ñ8³™Âƒ/
+java:S1075W"ARefactor your code to get this URI from a customizable parameter.(Œı«ñ8³™Âƒ/
+
+java:S1186\"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8°ìÒò€/
+P
+java:S1161\":Add the "@Override" annotation above this method signature(‚“¶î
+c
+java:S2259?"AA "NullPointerException" could be thrown; "pwd" is nullable here.(îÅñûıÿÿÿÿ8×¸ƒ/
+m
+java:S1989Y"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8±çÆƒ/

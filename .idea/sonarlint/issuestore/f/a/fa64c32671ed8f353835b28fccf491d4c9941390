@@ -1,31 +1,31 @@
 
-—
-java:S1186l"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
+P
+java:S11611":Add the "@Override" annotation above this method signature(÷¤‹ú
+c
+java:S1128"FRemove this unused import 'it.polimi.db2.GMA.services.ProductService'.(ñÓøÓ8â¸Ïè€/
+U
+java:S1161(":Add the "@Override" annotation above this method signature(¡’…ùüÿÿÿÿ
+f
+java:S1989g"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›
+u
+java:S19899"SHandle the following exception that could be thrown by "sendRedirect": IOException.(óÆÏÙıÿÿÿÿ8À¦¶è€/
+m
+java:S1989a"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8«ïé€/
+m
+java:S1989O"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8§¥åé€/
 c
 java:S1075="ARefactor your code to get this URI from a customizable parameter.(òÀ­Êıÿÿÿÿ8®Éàé€/
 m
-java:S1989a"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8«ïé€/
+java:S1989["PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8şêìé€/
 P
 java:S1161l":Add the "@Override" annotation above this method signature(‚“¶î
 m
 java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»
-c
-java:S1128"FRemove this unused import 'it.polimi.db2.GMA.services.ProductService'.(ñÓøÓ8â¸Ïè€/
+—
+java:S1186l"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
 f
 java:S1192N"IDefine a constant instead of duplicating this literal "errorMsg" 4 times.(èÉŠ÷8şêìé€/
-u
-java:S19899"SHandle the following exception that could be thrown by "sendRedirect": IOException.(óÆÏÙıÿÿÿÿ8À¦¶è€/
-m
-java:S1989O"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8§¥åé€/
-P
-java:S11611":Add the "@Override" annotation above this method signature(÷¤‹ú
-G
-java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8¡şè€/
-U
-java:S1161(":Add the "@Override" annotation above this method signature(¡’…ùüÿÿÿÿ
 Y
 java:S1128"<Remove this unused import 'it.polimi.db2.GMA.entities.User'.(“ÁÓÌ8Ä¶üè€/
-m
-java:S1989["PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8şêìé€/
-f
-java:S1989g"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›
+G
+java:S1128"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8¡şè€/

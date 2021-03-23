@@ -1,12 +1,12 @@
 
-t
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»8õŽÀæù.
-^
-java:S1075J"ARefactor your code to get this URI from a customizable parameter.(ÍÛÆú8õŽÀæù.
-m
-java:S1989Q"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8õŽÀæù.
 j
 java:S1192N"MDefine a constant instead of duplicating this literal "errorMessage" 3 times.(ŽÀ¶ç8·ƒŽ¬þ.
+^
+java:S1075J"ARefactor your code to get this URI from a customizable parameter.(ÍÛÆú8õŽÀæù.
+t
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(‚º»8õŽÀæù.
+m
+java:S1989Q"PHandle the following exception that could be thrown by "getWriter": IOException.(÷ŸÓ›8õŽÀæù.
 u
 java:S19896"SHandle the following exception that could be thrown by "sendRedirect": IOException.(¤¢µøøÿÿÿÿ8ÜÌëð€/
 ž
